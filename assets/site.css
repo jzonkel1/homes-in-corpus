@@ -278,6 +278,20 @@ footer{background:var(--ink);color:#9FA8B0;padding:44px 0;font-size:.84rem}
 .callbar .icon{width:19px;height:19px}
 @media(max-width:860px){.callbar{display:grid}footer{padding-bottom:110px}}
 
+/* ---------- TikTok video strip (swipeable row of embeds) ---------- */
+.tt-wrap{position:relative}
+.tt-arrow{position:absolute;top:calc(50% - 14px);transform:translateY(-50%);z-index:6;width:50px;height:50px;border-radius:50%;background:var(--ink);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(27,39,51,.30);transition:.15s}
+.tt-arrow .icon{width:24px;height:24px}
+.tt-arrow:hover{background:var(--orange)}
+.tt-arrow[disabled]{opacity:.3;cursor:default;pointer-events:none}
+.tt-prev{left:-10px}
+.tt-next{right:-10px}
+@media(max-width:860px){.tt-arrow{display:none}}  /* mobile: swipe instead */
+.tt-strip{display:flex;gap:18px;overflow-x:auto;padding:4px 2px 22px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.tt-strip::-webkit-scrollbar{height:8px}
+.tt-strip::-webkit-scrollbar-thumb{background:var(--line);border-radius:99px}
+.tt-strip > *{flex:0 0 auto;scroll-snap-align:center;margin:0 !important}
+
 /* ---------- photo lightbox ---------- */
 .gal-grid img{cursor:zoom-in}
 .lb-overlay{position:fixed;inset:0;z-index:200;background:rgba(15,23,31,.93);display:flex;align-items:center;justify-content:center;padding:30px;opacity:0;pointer-events:none;transition:opacity .25s;backdrop-filter:blur(4px)}

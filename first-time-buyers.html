@@ -73,8 +73,9 @@
   <div class="nav-in">
     <a href="index.html" class="brand"><span class="b1">Joe Monceballez</span><span class="b2" data-i18n="brand2">Realtor · Investor · Contractor</span></a>
     <div class="nav-links">
+      <a href="index.html" data-i18n="navHome">Home</a>
       <div class="has-sub">
-        <a data-i18n="nav0">Services <svg class="icon caret" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></a>
+        <a href="services.html" data-i18n="nav0">Services <svg class="icon caret" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></a>
         <div class="submenu">
           <div class="sm-col">
             <div class="sm-h" data-i18n="smH1">Sell Your House</div>
@@ -92,7 +93,7 @@
           <div class="sm-col">
             <div class="sm-h" data-i18n="smH3">Invest &amp; Renovate</div>
             <a href="index.html#situations"><span data-i18n="sm8">Investment &amp; Wholesale</span><small data-i18n="sm8s">Deals for Joe's investor network</small></a>
-            <a href="index.html#situations"><span data-i18n="sm9">Pre-Sale Renovations</span><small data-i18n="sm9s">Fix it to sell it — Joe's crew</small></a>
+            <a href="services.html#remodeling"><span data-i18n="sm9">Remodeling &amp; Handyman</span><small data-i18n="sm9s">Kitchens, floors, repairs — free estimates</small></a>
           </div>
           <div class="sm-foot">
             <div class="sm-cities">
@@ -102,7 +103,9 @@
           </div>
         </div>
       </div>
-      <a href="index.html#cash" data-i18n="nav2">Cash Offer</a><a href="index.html#listings" data-i18n="nav3">Listings</a><a href="index.html#reviews" data-i18n="nav4">Reviews</a><a href="index.html#about" data-i18n="nav5">About Joe</a>
+      <a href="gallery.html" data-i18n="navGallery">Gallery</a>
+      <a href="about.html" data-i18n="navAbout">About</a>
+      <a href="contact.html" data-i18n="navContact">Contact</a>
     </div>
     <div class="nav-right">
       <button class="lang-btn" id="langBtn" onclick="toggleLang()" aria-label="Cambiar idioma / Switch language">
@@ -230,6 +233,30 @@
 </section>
 
 <!-- 4. FAQ -->
+<section id="programs">
+  <div class="wrap">
+    <div class="center-head rv">
+      <span class="eyebrow"><span class="dash">—</span> <span data-i18n="pgEyebrow">Stop Renting, Start Building Equity</span> <span class="dash">—</span></span>
+      <h2 data-i18n="pgH2">You may qualify for more help than you think</h2>
+      <p data-i18n="pgP">A lot of Corpus Christi renters are surprised to learn they can buy sooner than they thought — with programs that help cover the down payment and closing costs. Joe will look at your situation and tell you straight what you may qualify for.</p>
+    </div>
+    <div class="way rv" style="max-width:720px;margin:0 auto">
+      <ul>
+        <li><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span data-i18n="pg1">Low down payment options</span></li>
+        <li><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span data-i18n="pg2">FHA, VA &amp; conventional loans</span></li>
+        <li><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span data-i18n="pg3">Down payment assistance programs (for those who qualify)</span></li>
+        <li><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span data-i18n="pg4">Free home buyer consultation</span></li>
+        <li><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span data-i18n="pg5">Personalized home search</span></li>
+      </ul>
+      <p data-i18n="pgNote">Joe will guide you through every step of the process — no pressure, and free to ask. Your first home may be more affordable than you think.</p>
+      <a class="btn btn-orange" href="tel:3619601779" style="width:100%;justify-content:center">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M13 2a9 9 0 0 1 9 9"/><path d="M13 6a5 5 0 0 1 5 5"/><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+        <span data-i18n="pgBtn">Ask Joe What You Qualify For</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <section style="background:var(--tan-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap">
     <div class="center-head rv">
@@ -353,6 +380,16 @@
 <!-- Page-specific Spanish strings (chrome ES is built into site.js). -->
 <script>
   window.PAGE_ES = {
+    pgEyebrow:'Deja de Rentar, Empieza a Crear Patrimonio',
+    pgH2:'Puede que califiques para más ayuda de la que crees',
+    pgP:'Muchos que rentan en Corpus Christi se sorprenden al saber que pueden comprar antes de lo que pensaban — con programas que ayudan a cubrir el enganche y los costos de cierre. Joe revisa tu situación y te dice con franqueza para qué puedes calificar.',
+    pg1:'Opciones de enganche bajo',
+    pg2:'Préstamos FHA, VA y convencionales',
+    pg3:'Programas de ayuda con el enganche (para quienes califican)',
+    pg4:'Consulta gratis para compradores',
+    pg5:'Búsqueda de casa personalizada',
+    pgNote:'Joe te guía en cada paso del proceso — sin presión, y preguntar es gratis. Tu primera casa puede ser más accesible de lo que crees.',
+    pgBtn:'Pregúntale a Joe Para Qué Calificas',
     crumbHome:'Inicio',
     crumbHere:'Compradores por Primera Vez',
     heroEyebrow:'Tu Primera Casa, Sin Complicaciones',

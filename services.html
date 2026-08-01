@@ -1,0 +1,387 @@
+<!-- ============================================================
+     Services Overview — routing page. Built from _shell-reference.html.
+     Real estate primary; remodeling/handyman secondary (#remodeling).
+     ============================================================ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — Joe Monceballez, Corpus Christi Realtor, Investor &amp; Contractor</title>
+<meta name="description" content="Buy, sell, get a cash offer, or remodel in Corpus Christi with Joe Monceballez — Realtor, investor &amp; contractor. 99 homes closed. (361) 960-1779.">
+<link rel="canonical" href="https://homesincorpus.com/services.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%231B2733'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='%23E8642C' font-family='Georgia' font-weight='bold'>JM</text></svg>">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span data-i18n="tb1">⭐ <b>5.0 on Zillow</b> · 99 homes closed<span class="tb-tail"> · Corpus Christi &amp; the Coastal Bend</span></span>
+    <div class="tb-right"><span data-i18n="tb2">Se habla español</span><span style="display:inline-flex;align-items:center;gap:7px"><img src="assets/valtex-logo.png" alt="ValTex Realty" style="height:18px;width:auto;filter:drop-shadow(0 0 2px rgba(255,255,255,.35))">ValTex Realty · TREC #0586828</span></div>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-in">
+    <a href="index.html" class="brand"><span class="b1">Joe Monceballez</span><span class="b2" data-i18n="brand2">Realtor · Investor · Contractor</span></a>
+    <div class="nav-links">
+      <a href="index.html" data-i18n="navHome">Home</a>
+      <div class="has-sub">
+        <a href="services.html" data-i18n="nav0">Services <svg class="icon caret" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></a>
+        <div class="submenu">
+          <div class="sm-col">
+            <div class="sm-h" data-i18n="smH1">Sell Your House</div>
+            <a href="sell-your-home.html"><span data-i18n="sm1">Sell Your Home</span><small data-i18n="sm1s">Full-service listing, top dollar</small></a>
+            <a href="home-valuation.html"><span data-i18n="sm2">Free Home Valuation</span><small data-i18n="sm2s">What's it worth today?</small></a>
+            <a href="index.html#cash"><span data-i18n="sm3">Get a Cash Offer</span><small data-i18n="sm3s">As-is, close on your timeline</small></a>
+            <a href="index.html#situations"><span data-i18n="sm4">Stop Foreclosure</span><small data-i18n="sm4s">Fast options, straight answers</small></a>
+            <a href="index.html#situations"><span data-i18n="sm5">Sell an Inherited House</span><small data-i18n="sm5s">No cleanout, no repairs</small></a>
+          </div>
+          <div class="sm-col">
+            <div class="sm-h" data-i18n="smH2">Buy</div>
+            <a href="buy-a-home.html"><span data-i18n="sm6">Buy a Home</span><small data-i18n="sm6s">Joe's commission costs you $0</small></a>
+            <a href="first-time-buyers.html"><span data-i18n="sm7">First-Time Buyers</span><small data-i18n="sm7s">Best lenders, zero pressure</small></a>
+          </div>
+          <div class="sm-col">
+            <div class="sm-h" data-i18n="smH3">Invest &amp; Renovate</div>
+            <a href="index.html#situations"><span data-i18n="sm8">Investment &amp; Wholesale</span><small data-i18n="sm8s">Deals for Joe's investor network</small></a>
+            <a href="services.html#remodeling"><span data-i18n="sm9">Remodeling &amp; Handyman</span><small data-i18n="sm9s">Kitchens, floors, repairs — free estimates</small></a>
+          </div>
+          <div class="sm-foot">
+            <div class="sm-cities">
+              <span class="sm-city">Portland</span><span class="sm-city">Calallen</span><span class="sm-city">Flour Bluff</span><span class="sm-city">Robstown</span><span class="sm-city">Rockport</span><span class="sm-city">Ingleside</span>
+            </div>
+            <span class="sm-badge" data-i18n="smBadge">TALK TO JOE TODAY</span>
+          </div>
+        </div>
+      </div>
+      <a href="gallery.html" data-i18n="navGallery">Gallery</a>
+      <a href="about.html" data-i18n="navAbout">About</a>
+      <a href="contact.html" data-i18n="navContact">Contact</a>
+    </div>
+    <div class="nav-right">
+      <button class="lang-btn" id="langBtn" onclick="toggleLang()" aria-label="Cambiar idioma / Switch language">
+        <svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg>
+        <span id="langLabel">ES</span>
+      </button>
+      <a class="btn btn-orange nav-cta" href="tel:3619601779">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M13 2a9 9 0 0 1 9 9"/><path d="M13 6a5 5 0 0 1 5 5"/><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+        (361) 960-1779
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero subhero">
+  <div class="hero-bg" style="background-image:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)),url('assets/house-brick-2.jpg')" role="img" aria-label="Corpus Christi home"></div>
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html" data-i18n="crumbHome">Home</a> · <span data-i18n="crumbHere">Services</span></div>
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow"><span class="dash">—</span> <span data-i18n="heroEyebrow">How Joe Can Help</span> <span class="dash">—</span></span>
+        <h1 data-i18n="heroH1">One person for the whole move — <em>buy, sell, cash offer,</em> or remodel.</h1>
+        <p class="lead" data-i18n="heroLead">Joe is a Realtor, active investor, and licensed contractor serving Corpus Christi and the Coastal Bend. Whatever your situation, there's a straight path to it below.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-orange" href="tel:3619601779">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M13 2a9 9 0 0 1 9 9"/><path d="M13 6a5 5 0 0 1 5 5"/><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+            <span data-i18n="heroCta1">Call or Text Joe</span>
+          </a>
+          <a class="btn btn-ghost-w" href="#contact"><span data-i18n="heroCta2">Talk to Joe</span></a>
+        </div>
+        <div class="chips">
+          <span class="chip"><svg class="icon" viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><b>5.0</b>&nbsp;<span data-i18n="heroChip1">on Zillow</span></span>
+          <span class="chip"><svg class="icon" viewBox="0 0 24 24"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><b>99</b>&nbsp;<span data-i18n="heroChip2">homes closed</span></span>
+          <span class="chip"><svg class="icon" viewBox="0 0 24 24"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg><span data-i18n="heroChip3">Se habla español</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= MAIN ================= -->
+
+<!-- 1. Real estate services grid (primary) -->
+<section>
+  <div class="wrap">
+    <div class="center-head rv">
+      <span class="eyebrow"><span class="dash">—</span> <span data-i18n="gEyebrow">Real Estate</span> <span class="dash">—</span></span>
+      <h2 data-i18n="gH2">Pick the door that fits your situation</h2>
+      <p data-i18n="gP">Selling, buying, or just want a real number on your house? Start here — each one takes you to a page built for exactly that.</p>
+    </div>
+    <div class="rv" style="display:flex;flex-wrap:wrap;justify-content:center;gap:28px">
+
+      <div class="way" style="flex:1 1 300px;max-width:360px">
+        <div class="w-ic"><svg class="icon" viewBox="0 0 24 24"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+        <div class="w-sub" data-i18n="c1Sub">Sellers</div>
+        <h3 data-i18n="c1H">Sell Your Home</h3>
+        <p data-i18n="c1P">Full-service listing with a contractor's eye on repairs and hard negotiation, so your home reaches every buyer and sells for top dollar.</p>
+        <a class="btn btn-orange" href="sell-your-home.html"><span data-i18n="c1Btn">Sell Your Home</span></a>
+      </div>
+
+      <div class="way" style="flex:1 1 300px;max-width:360px">
+        <div class="w-ic"><svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg></div>
+        <div class="w-sub" data-i18n="c2Sub">Thinking about it</div>
+        <h3 data-i18n="c2H">Free Home Valuation</h3>
+        <p data-i18n="c2P">Find out what your home is really worth today — a free, no-obligation number based on real local sales, not an automated online guess.</p>
+        <a class="btn btn-orange" href="home-valuation.html"><span data-i18n="c2Btn">Get Your Free Valuation</span></a>
+      </div>
+
+      <div class="way cash" style="flex:1 1 300px;max-width:360px">
+        <div class="w-ic"><svg class="icon" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="w-sub" data-i18n="c3Sub">Need speed?</div>
+        <h3 data-i18n="c3H">Get a Cash Offer</h3>
+        <p data-i18n="c3P">Joe is an active investor too. Skip repairs, cleanout, and showings — sell as-is and close on the date that works for you.</p>
+        <a class="btn btn-white" href="index.html#cash"><span data-i18n="c3Btn">See the Cash Offer</span></a>
+      </div>
+
+      <div class="way" style="flex:1 1 300px;max-width:360px">
+        <div class="w-ic"><svg class="icon" viewBox="0 0 24 24"><path d="m2 22 1-1h3l9-9"/><path d="M3 21v-3l9-9"/><path d="m15 6 3.4-3.4a2.1 2.1 0 1 1 3 3L18 9l.4.4a2.1 2.1 0 1 1-3 3l-3.8-3.8a2.1 2.1 0 1 1 3-3l.4.4Z"/></svg></div>
+        <div class="w-sub" data-i18n="c4Sub">Buyers</div>
+        <h3 data-i18n="c4H">Buy a Home</h3>
+        <p data-i18n="c4P">Joe's commission as your buyer's agent costs you $0. He knows the Coastal Bend and negotiates hard to get you the right home at the right price.</p>
+        <a class="btn btn-orange" href="buy-a-home.html"><span data-i18n="c4Btn">Start Your Home Search</span></a>
+      </div>
+
+      <div class="way" style="flex:1 1 300px;max-width:360px">
+        <div class="w-ic"><svg class="icon" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div class="w-sub" data-i18n="c5Sub">First home</div>
+        <h3 data-i18n="c5H">First-Time Buyers</h3>
+        <p data-i18n="c5P">Never bought before? Joe connects you with the best lenders and walks you through every step in plain language — zero pressure, English or Español.</p>
+        <a class="btn btn-orange" href="first-time-buyers.html"><span data-i18n="c5Btn">Buy Your First Home</span></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 2. Why Joe band -->
+<section style="background:var(--tan-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="center-head rv">
+      <span class="eyebrow"><span class="dash">—</span> <span data-i18n="whyEyebrow">Why Joe</span> <span class="dash">—</span></span>
+      <h2 data-i18n="whyH2">One person who covers the whole move</h2>
+      <p data-i18n="whyP">Most people juggle an agent, an investor, and a contractor. With Joe, that's one trusted phone number.</p>
+    </div>
+    <div class="steps">
+      <div class="step rv">
+        <div class="sn">1</div>
+        <h3 data-i18n="wp1H">Realtor, investor &amp; contractor</h3>
+        <p data-i18n="wp1P">Because Joe wears all three hats, he sees value and options most agents miss — from listing price to which repairs actually pay off.</p>
+      </div>
+      <div class="step rv">
+        <div class="sn">2</div>
+        <h3 data-i18n="wp2H">Buyers pay $0 commission</h3>
+        <p data-i18n="wp2P">When Joe represents you as a buyer, his commission costs you nothing — and he negotiates hard on your side of the table.</p>
+      </div>
+      <div class="step rv">
+        <div class="sn">3</div>
+        <h3 data-i18n="wp3H">Bilingual, with 99 homes closed</h3>
+        <p data-i18n="wp3P">99 closings, a 5.0 rating on Zillow, and straight answers in English or Español — call or text and you get a real person the same day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. Remodeling & Handyman (SECONDARY) -->
+<section id="remodeling">
+  <div class="wrap">
+    <div class="prose-grid">
+      <div class="prose rv">
+        <span class="eyebrow"><span class="dash">—</span> <span data-i18n="rmEyebrow">Also Available</span></span>
+        <h2 data-i18n="rmH2">Remodeling &amp; handyman work</h2>
+        <p data-i18n="rmP">Beyond real estate, Joe is a licensed contractor who takes on remodeling and handyman jobs around Corpus Christi — for homeowners and investors alike. From a single repair to a full remodel, it's the same person you already trust.</p>
+        <ul class="ticks">
+          <li><svg class="icon" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="rmL1"><b>Kitchens &amp; bathrooms.</b> Cabinets, counters, tile, and full custom remodels.</span></li>
+          <li><svg class="icon" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="rmL2"><b>Flooring &amp; interiors.</b> New floors, drywall, paint, and accent walls.</span></li>
+          <li><svg class="icon" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="rmL3"><b>Light installs &amp; repairs.</b> Fixtures, hardware, and the punch-list items on your plate.</span></li>
+          <li><svg class="icon" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="rmL4"><b>Full remodels.</b> Bigger projects and fix-to-sell renovations, start to finish.</span></li>
+        </ul>
+        <p data-i18n="rmNote" style="font-weight:600;color:var(--ink)">Free estimates — reach out and tell Joe what you need done.</p>
+      </div>
+      <aside>
+        <div class="side-card rv">
+          <div class="w-ic" style="width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(217,164,65,.14);color:var(--gold);margin-bottom:18px"><svg class="icon" viewBox="0 0 24 24" style="width:27px;height:27px"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+          <h3 data-i18n="rmScH">Need work done?</h3>
+          <p data-i18n="rmScP">Free estimates on remodeling and handyman work across Corpus Christi and the Coastal Bend.</p>
+          <a class="btn btn-orange" href="tel:3619601779">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M13 2a9 9 0 0 1 9 9"/><path d="M13 6a5 5 0 0 1 5 5"/><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+            <span data-i18n="rmBtn">Call for a Free Estimate</span>
+          </a>
+          <p class="sc-fine" data-i18n="rmScFine">Licensed contractor · (361) 960-1779</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- 4. CTA band -->
+<section class="ctaband rv">
+  <div class="wrap">
+    <span class="eyebrow"><span class="dash">—</span> <span data-i18n="cbEyebrow">Not Sure Where To Start?</span> <span class="dash">—</span></span>
+    <h2 data-i18n="cbH2">Just tell Joe what you're trying to do</h2>
+    <p data-i18n="cbP">One call and he'll point you to the right option — buy, sell, cash offer, or a project around the house. No pressure, no obligation.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-orange" href="tel:3619601779">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M13 2a9 9 0 0 1 9 9"/><path d="M13 6a5 5 0 0 1 5 5"/><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+        <span data-i18n="cbCta1">Call or Text (361) 960-1779</span>
+      </a>
+      <a class="btn btn-ghost-w" href="#contact"><span data-i18n="cbCta2">Send Joe a Message</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact">
+  <div class="wrap c-grid">
+    <div class="c-left rv">
+      <span class="eyebrow"><span class="dash">—</span> <span data-i18n="ctEyebrow">Talk To Joe</span></span>
+      <h2 data-i18n="ctH2">“I'm available 24/7 to meet your needs.”</h2>
+      <p data-i18n="ctP">Whether it's a valuation, a cash offer, a renovation question, or your first home — the fastest way to an answer is a call or a text.</p>
+      <div class="c-rows">
+        <a class="c-row" href="tel:3619601779"><svg class="icon" viewBox="0 0 24 24"><path d="M13 2a9 9 0 0 1 9 9"/><path d="M13 6a5 5 0 0 1 5 5"/><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg><span>(361) 960-1779<small data-i18n="ctRow1">Call or text — fastest response</small></span></a>
+        <a class="c-row" href="mailto:joe@homesincorpus.com"><svg class="icon" viewBox="0 0 24 24"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg><span>joe@homesincorpus.com<small data-i18n="ctRow2">Email Joe directly</small></span></a>
+      </div>
+      <div class="socials">
+        <a class="soc" href="https://www.facebook.com/JOECORPUSCHRISTIREALTOR/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+        <a class="soc" href="https://www.instagram.com/joemonceballez/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg></a>
+        <a class="soc" href="https://www.tiktok.com/@joemonceballez" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+      </div>
+    </div>
+    <form class="lead-form rv">
+      <input type="hidden" name="_subject" value="New lead from homesincorpus.com (Services page)">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="Source page" value="Services page">
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <h3 data-i18n="fH">Tell Joe what you need</h3>
+      <p class="f-sub" data-i18n="fSub">He'll get back to you the same day — usually a lot faster.</p>
+      <div class="f-field">
+        <label data-i18n="fL1">I'm looking to…</label>
+        <select required name="Looking to" id="fSelect">
+          <option value="" data-i18n="fO0">Choose one</option>
+          <option data-i18n="fO1">Sell my home (list it)</option>
+          <option data-i18n="fO2">Get a cash offer on my house</option>
+          <option data-i18n="fO3">Buy a home</option>
+          <option data-i18n="fO5">Talk investing / wholesale deals</option>
+        </select>
+      </div>
+      <div class="f-row">
+        <div class="f-field"><label data-i18n="fL2">Name</label><input type="text" name="Name" data-ph="phName" placeholder="Your name" required></div>
+        <div class="f-field"><label data-i18n="fL3">Phone</label><input type="tel" name="Phone" placeholder="(361) 555-0123" required></div>
+      </div>
+      <div class="f-field"><label><span data-i18n="fL4">Property address</span> <span style="text-transform:none;font-weight:500" data-i18n="fL4b">(if selling)</span></label><input type="text" name="Property address" data-ph="phAddr" placeholder="Street address, city"></div>
+      <div class="f-field"><label data-i18n="fL5">Anything else?</label><textarea rows="3" name="Message" data-ph="phMsg" placeholder="Timeline, condition, questions…"></textarea></div>
+      <button class="btn btn-orange" type="submit">
+        <svg class="icon" viewBox="0 0 24 24"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>
+        <span data-i18n="fBtn">Send It to Joe</span>
+      </button>
+      <p class="f-fine" data-i18n="fFine">By submitting, you agree Joe may call or text you back at the number provided. No spam, ever.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div class="fcol">
+      <div class="fb1">Joe Monceballez</div>
+      <div class="fb2" data-i18n="ftRole">Realtor · Investor · Contractor</div>
+      <p class="legal" style="display:flex;align-items:flex-start;gap:10px"><img src="assets/valtex-logo.png" alt="ValTex Realty" style="height:48px;width:auto;margin-top:2px;filter:drop-shadow(0 0 3px rgba(255,255,255,.25))"><span>ValTex Realty · Corpus Christi, TX<br>TREC License #0586828 · <a href="tel:3619601779">(361) 960-1779</a> · <a href="mailto:joe@homesincorpus.com">joe@homesincorpus.com</a></span></p>
+    </div>
+    <div class="fcol">
+      <div class="flinks">
+        <a href="sell-your-home.html">Sell Your Home</a>
+        <a href="home-valuation.html">Free Home Valuation</a>
+        <a href="buy-a-home.html">Buy a Home</a>
+        <a href="first-time-buyers.html">First-Time Buyers</a>
+      </div>
+      <p class="legal"><a href="https://www.trec.texas.gov/forms/consumer-protection-notice" target="_blank" rel="noopener">TREC Consumer Protection Notice</a><br><a href="https://www.trec.texas.gov/" target="_blank" rel="noopener">Texas Real Estate Commission Information About Brokerage Services</a><br><a href="privacy-policy.html">Privacy Policy</a> · <a href="terms-of-service.html">Terms of Service</a><br>© 2026 Joe Monceballez · All rights reserved<br><a href="https://zonkelmedia.com" target="_blank" rel="noopener">Web Design by Zonkel Media</a></p>
+    </div>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a class="cb-call" href="tel:3619601779"><svg class="icon" viewBox="0 0 24 24"><path d="M13 2a9 9 0 0 1 9 9"/><path d="M13 6a5 5 0 0 1 5 5"/><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg><span data-i18n="cbCall">Call Joe</span></a>
+  <a class="cb-text" href="sms:3619601779"><svg class="icon" viewBox="0 0 24 24"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg><span data-i18n="cbText">Text Joe</span></a>
+</div>
+
+<!-- Page-specific Spanish strings (chrome ES is built into site.js). -->
+<script>
+  window.PAGE_ES = {
+    crumbHome:'Inicio',
+    crumbHere:'Servicios',
+    heroEyebrow:'Cómo Te Puede Ayudar Joe',
+    heroH1:'Una sola persona para toda la mudanza — <em>comprar, vender, oferta en efectivo,</em> o remodelar.',
+    heroLead:'Joe es Realtor, inversionista activo y contratista con licencia sirviendo a Corpus Christi y el Coastal Bend. Sea cual sea tu situación, aquí abajo hay un camino directo para ti.',
+    heroCta1:'Llama o Textea a Joe',
+    heroCta2:'Habla con Joe',
+    heroChip1:'en Zillow',
+    heroChip2:'casas vendidas',
+    heroChip3:'Se habla español',
+
+    gEyebrow:'Bienes Raíces',
+    gH2:'Elige la puerta que va con tu situación',
+    gP:'¿Vendiendo, comprando, o solo quieres un número real de tu casa? Empieza aquí — cada opción te lleva a una página hecha justo para eso.',
+
+    c1Sub:'Vendedores',
+    c1H:'Vende Tu Casa',
+    c1P:'Venta de servicio completo con el ojo de un contratista para las reparaciones y negociación firme, para que tu casa llegue a todos los compradores y se venda al mejor precio.',
+    c1Btn:'Vende Tu Casa',
+
+    c2Sub:'Todavía pensándolo',
+    c2H:'Valuación Gratis de Tu Casa',
+    c2P:'Descubre cuánto vale tu casa hoy — un número gratis y sin compromiso basado en ventas locales reales, no en un estimado automático de internet.',
+    c2Btn:'Recibe Tu Valuación Gratis',
+
+    c3Sub:'¿Necesitas rapidez?',
+    c3H:'Recibe una Oferta en Efectivo',
+    c3P:'Joe también es inversionista activo. Sáltate las reparaciones, la limpieza y las visitas — vende tal como está y cierra en la fecha que te convenga.',
+    c3Btn:'Ver la Oferta en Efectivo',
+
+    c4Sub:'Compradores',
+    c4H:'Compra una Casa',
+    c4P:'La comisión de Joe como tu agente comprador te cuesta $0. Conoce el Coastal Bend y negocia fuerte para conseguirte la casa correcta al precio correcto.',
+    c4Btn:'Empieza Tu Búsqueda',
+
+    c5Sub:'Primera casa',
+    c5H:'Compradores Primerizos',
+    c5P:'¿Nunca has comprado? Joe te conecta con los mejores prestamistas y te guía en cada paso en palabras sencillas — sin presión, en inglés o español.',
+    c5Btn:'Compra Tu Primera Casa',
+
+    whyEyebrow:'Por Qué Joe',
+    whyH2:'Una sola persona que cubre toda la mudanza',
+    whyP:'La mayoría hace malabares con un agente, un inversionista y un contratista. Con Joe, eso es un solo número de confianza.',
+    wp1H:'Realtor, inversionista y contratista',
+    wp1P:'Como Joe usa los tres sombreros, ve valor y opciones que la mayoría de los agentes no ven — desde el precio de listado hasta qué reparaciones de verdad valen la pena.',
+    wp2H:'Los compradores pagan $0 de comisión',
+    wp2P:'Cuando Joe te representa como comprador, su comisión no te cuesta nada — y negocia fuerte de tu lado de la mesa.',
+    wp3H:'Bilingüe, con 99 casas vendidas',
+    wp3P:'99 cierres, una calificación de 5.0 en Zillow, y respuestas directas en inglés o español — llama o textea y hablas con una persona real el mismo día.',
+
+    rmEyebrow:'También Disponible',
+    rmH2:'Remodelación y trabajo de handyman',
+    rmP:'Más allá de los bienes raíces, Joe es contratista con licencia que toma trabajos de remodelación y handyman por Corpus Christi — para dueños de casa e inversionistas por igual. Desde una sola reparación hasta un remodelado completo, es la misma persona en quien ya confías.',
+    rmL1:'<b>Cocinas y baños.</b> Gabinetes, cubiertas, azulejo y remodelados personalizados completos.',
+    rmL2:'<b>Pisos e interiores.</b> Pisos nuevos, tablaroca, pintura y paredes de acento.',
+    rmL3:'<b>Instalaciones y reparaciones.</b> Lámparas, herrajes y los pendientes de tu lista.',
+    rmL4:'<b>Remodelados completos.</b> Proyectos grandes y renovaciones para vender, de principio a fin.',
+    rmNote:'Estimados gratis — comunícate y dile a Joe qué necesitas.',
+    rmScH:'¿Necesitas trabajo hecho?',
+    rmScP:'Estimados gratis en remodelación y trabajo de handyman por Corpus Christi y el Coastal Bend.',
+    rmBtn:'Llama por un Estimado Gratis',
+    rmScFine:'Contratista con licencia · (361) 960-1779',
+
+    cbEyebrow:'¿No Sabes Por Dónde Empezar?',
+    cbH2:'Solo dile a Joe qué estás tratando de hacer',
+    cbP:'Una llamada y te dirige a la opción correcta — comprar, vender, oferta en efectivo, o un proyecto en la casa. Sin presión, sin compromiso.',
+    cbCta1:'Llama o Textea al (361) 960-1779',
+    cbCta2:'Envíale un Mensaje a Joe',
+  };
+  window.PAGE_ES_PH = {};
+</script>
+<script src="assets/site.js"></script>
+</body>
+</html>

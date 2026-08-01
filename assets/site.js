@@ -64,6 +64,7 @@
     tb2: 'English available',
     brand2: 'Realtor · Inversionista · Contratista',
     nav0: 'Servicios <svg class="icon caret" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>',
+    navHome: 'Inicio', navGallery: 'Galería', navAbout: 'Nosotros', navContact: 'Contacto',
     nav2: 'Oferta en Efectivo', nav3: 'Propiedades', nav4: 'Reseñas', nav5: 'Sobre Joe',
     smH1: 'Vende Tu Casa', smH2: 'Comprar', smH3: 'Invertir y Renovar',
     sm1: 'Vende Tu Casa', sm1s: 'Listado completo, al mejor precio',
@@ -74,7 +75,7 @@
     sm6: 'Compra una Casa', sm6s: 'La comisión de Joe te cuesta $0',
     sm7: 'Compradores Primerizos', sm7s: 'Los mejores prestamistas, sin presión',
     sm8: 'Inversión y Wholesale', sm8s: 'Tratos para la red de Joe',
-    sm9: 'Renovaciones Pre-Venta', sm9s: 'Repararla para venderla — el equipo de Joe',
+    sm9: 'Remodelación y Handyman', sm9s: 'Cocinas, pisos, reparaciones — estimados gratis',
     smBadge: 'HABLA CON JOE HOY',
     navCta: '(361) 960-1779',
     ctEyebrow: 'Habla con Joe', ctH2: '“Estoy disponible 24/7 para lo que necesites.”',
@@ -177,4 +178,24 @@
       else if (e.key === 'ArrowRight') lbShow(lbI + 1);
     });
   }
+
+  /* ---------- TikTok strip arrows (desktop) ---------- */
+  document.querySelectorAll('.tt-wrap').forEach(function (wrap) {
+    var strip = wrap.querySelector('.tt-strip');
+    var prev = wrap.querySelector('.tt-prev');
+    var next = wrap.querySelector('.tt-next');
+    if (!strip || !prev || !next) return;
+    var step = function () { return Math.max(340, strip.clientWidth * 0.7); };
+    var update = function () {
+      prev.disabled = strip.scrollLeft <= 4;
+      next.disabled = strip.scrollLeft >= strip.scrollWidth - strip.clientWidth - 4;
+    };
+    prev.addEventListener('click', function () { strip.scrollBy({ left: -step(), behavior: 'smooth' }); });
+    next.addEventListener('click', function () { strip.scrollBy({ left: step(), behavior: 'smooth' }); });
+    strip.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    // embeds hydrate late (embed.js swaps blockquotes for iframes, changing scrollWidth)
+    setTimeout(update, 1500); setTimeout(update, 4000);
+    update();
+  });
 })();
