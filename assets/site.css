@@ -26,7 +26,7 @@ section{padding:84px 0}
 .topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px}
 .topbar span b{color:var(--gold);font-weight:700}
 .topbar .tb-right{display:flex;gap:16px;align-items:center}
-@media(max-width:640px){.topbar .tb-right{display:none}.topbar .wrap{justify-content:center}}
+@media(max-width:640px){.topbar{font-size:.78rem}.topbar .tb-right{display:none}.topbar .wrap{justify-content:center}.topbar>.wrap>span{white-space:nowrap;text-align:center}.tb-tail{display:none}}
 
 /* ---------- nav ---------- */
 nav{position:sticky;top:0;z-index:50;background:rgba(248,243,234,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}

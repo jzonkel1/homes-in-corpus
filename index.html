@@ -33,7 +33,7 @@
   .topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px}
   .topbar span b{color:var(--gold);font-weight:700}
   .topbar .tb-right{display:flex;gap:16px;align-items:center}
-  @media(max-width:640px){.topbar .tb-right{display:none}.topbar .wrap{justify-content:center}}
+  @media(max-width:640px){.topbar{font-size:.78rem}.topbar .tb-right{display:none}.topbar .wrap{justify-content:center}.topbar>.wrap>span{white-space:nowrap;text-align:center}.tb-tail{display:none}}
 
   /* ---------- nav ---------- */
   nav{position:sticky;top:0;z-index:50;background:rgba(248,243,234,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
@@ -364,7 +364,7 @@
 
 <div class="topbar">
   <div class="wrap">
-    <span data-i18n="tb1">⭐ <b>5.0 on Zillow</b> · 99 homes closed · Corpus Christi &amp; the Coastal Bend</span>
+    <span data-i18n="tb1">⭐ <b>5.0 on Zillow</b> · 99 homes closed<span class="tb-tail"> · Corpus Christi &amp; the Coastal Bend</span></span>
     <div class="tb-right"><span data-i18n="tb2">Se habla español</span><span style="display:inline-flex;align-items:center;gap:7px"><img src="assets/valtex-logo.png" alt="ValTex Realty" style="height:18px;width:auto;filter:drop-shadow(0 0 2px rgba(255,255,255,.35))">ValTex Realty · TREC #0586828</span></div>
   </div>
 </div>
@@ -897,7 +897,7 @@
 
   /* ---------- EN/ES translation ---------- */
   const ES = {
-    tb1:'⭐ <b>5.0 en Zillow</b> · 99 casas cerradas · Corpus Christi y el Coastal Bend',
+    tb1:'⭐ <b>5.0 en Zillow</b> · 99 casas cerradas<span class="tb-tail"> · Corpus Christi y el Coastal Bend</span>',
     tb2:'English available',
     brand2:'Realtor · Inversionista · Contratista',
     nav0:'Servicios <svg class="icon caret" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>',

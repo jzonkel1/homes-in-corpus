@@ -60,7 +60,7 @@
   // Shared chrome dictionary (nav, topbar, footer, contact, callbar).
   // Page-specific strings come from window.PAGE_ES defined inline per page.
   var CHROME_ES = {
-    tb1: '⭐ <b>5.0 en Zillow</b> · 99 casas cerradas · Corpus Christi y el Coastal Bend',
+    tb1: '⭐ <b>5.0 en Zillow</b> · 99 casas cerradas<span class="tb-tail"> · Corpus Christi y el Coastal Bend</span>',
     tb2: 'English available',
     brand2: 'Realtor · Inversionista · Contratista',
     nav0: 'Servicios <svg class="icon caret" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>',
