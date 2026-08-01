@@ -17,6 +17,7 @@
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
+  [id]{scroll-margin-top:84px}
   body{font-family:'Karla',sans-serif;color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}
   img{max-width:100%;display:block}
   a{color:inherit;text-decoration:none}
@@ -58,14 +59,35 @@
   .lang-btn:hover{background:var(--ink);color:#F3EBDC}
   @media(max-width:960px){.nav-links{display:none}}
 
+  /* ---------- mobile chrome: burger menu, compact call CTA ---------- */
+  .burger{display:none;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;flex-shrink:0;padding:0}
+  .burger .icon{width:22px;height:22px}
+  .mobile-menu{display:none;position:fixed;left:0;right:0;bottom:0;background:var(--cream);z-index:49;overflow-y:auto;padding:8px 24px 140px;border-top:1px solid var(--line)}
+  body.menu-open .mobile-menu{display:block}
+  body.menu-open{overflow:hidden}
+  .mobile-menu .has-sub>a{display:none}
+  .mobile-menu .submenu{position:static;transform:none;opacity:1;pointer-events:auto;width:auto;display:block;background:transparent;border:0;box-shadow:none;padding:0;box-sizing:border-box}
+  .mobile-menu .sm-h{margin:22px 0 2px;font-size:.72rem}
+  .mobile-menu .sm-col{display:block}
+  .mobile-menu .sm-col a,.mobile-menu>a{display:block;padding:13px 0;margin:0;border-radius:0;border-bottom:1px solid var(--line);font-weight:600;font-size:1.02rem;color:var(--ink);opacity:1}
+  .mobile-menu .sm-col a small{font-size:.8rem}
+  .mobile-menu .sm-foot{display:none}
+  .mobile-menu>a:first-of-type{margin-top:20px}
+  @media(max-width:960px){.burger{display:flex}}
+  @media(max-width:640px){
+    .nav-cta{font-size:0;gap:0;padding:12px;border-radius:50%}
+    .nav-cta .icon{width:20px;height:20px}
+    .brand .b1{font-size:1.08rem}
+  }
+
   /* ---------- services dropdown ---------- */
   .has-sub{position:relative}
   .has-sub > a{display:inline-flex;align-items:center;gap:5px;cursor:pointer}
   .has-sub .caret{width:13px;height:13px;stroke-width:2.5;transition:.2s}
-  .has-sub:hover .caret{transform:rotate(180deg)}
+  .nav-links .has-sub:hover .caret{transform:rotate(180deg)}
   .submenu{position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%) translateY(8px);width:660px;background:var(--paper);border:1px solid var(--line);border-radius:18px;box-shadow:0 30px 70px rgba(27,39,51,.22);padding:26px 28px 20px;display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:6px 26px;opacity:0;pointer-events:none;transition:.18s;z-index:60}
   .submenu::before{content:"";position:absolute;top:-14px;left:0;right:0;height:14px}
-  .has-sub:hover .submenu{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+  .nav-links .has-sub:hover .submenu{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
   .sm-h{grid-row:1;font-size:.68rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);margin-bottom:6px}
   .sm-col{display:flex;flex-direction:column;gap:2px}
   .sm-col a{display:block;padding:7px 10px;margin:0 -10px;border-radius:9px;font-weight:600;font-size:.88rem;color:var(--ink);opacity:1}
@@ -86,7 +108,8 @@
   .hero h1{font-size:clamp(2.3rem,4.6vw,3.5rem);margin:18px 0 20px;color:#FDF9F0;text-shadow:0 2px 24px rgba(0,0,0,.35)}
   .hero h1 em{font-style:italic;color:#F0A16B}
   .hero p.lead{font-size:1.12rem;color:#E4DCCB;max-width:33rem;margin-bottom:30px;text-shadow:0 1px 12px rgba(0,0,0,.3)}
-  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:32px}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+  .hero-note{display:inline-flex;align-items:center;gap:8px;color:#FDF9F0;font-size:.9rem;font-weight:700;margin:0 0 26px;padding:8px 15px;background:rgba(15,23,31,.55);border:1px solid rgba(233,220,198,.28);border-radius:999px;backdrop-filter:blur(4px)}
   .chips{display:flex;gap:10px;flex-wrap:wrap}
   .hero .chip{background:rgba(15,23,31,.55);border:1px solid rgba(233,220,198,.3);color:#EFE7D8;backdrop-filter:blur(4px)}
   .hero .chip .icon{color:var(--gold)}
@@ -142,17 +165,51 @@
   .way li .icon{width:19px;height:19px;color:var(--orange);margin-top:3px}
   .way.cash li .icon{color:var(--gold)}
   @media(max-width:860px){.ways{grid-template-columns:1fr}.way{padding:34px 26px}}
+  .situations{background:var(--tan-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .sit-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:62rem;margin:0 auto}
+  .sit{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:32px 30px;display:flex;flex-direction:column;align-items:flex-start;transition:.2s}
+  .sit:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(27,39,51,.1)}
+  .sit .s-ic{width:48px;height:48px;border-radius:13px;display:flex;align-items:center;justify-content:center;background:var(--tan-2);color:var(--orange)}
+  .sit .s-ic .icon{width:24px;height:24px}
+  .sit h3{font-size:1.3rem;margin:16px 0 8px}
+  .sit p{color:var(--ink-2);font-size:.98rem;margin-bottom:16px}
+  .sit .s-cta{margin-top:auto;color:var(--orange);font-weight:700;font-size:.93rem}
+  .sit .s-cta:hover{text-decoration:underline}
+  @media(max-width:860px){.sit-grid{grid-template-columns:1fr}}
+
+  /* faq */
+  .faq{max-width:52rem;margin:0 auto;display:grid;gap:12px}
+  .faq details{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:0 22px;transition:.15s}
+  .faq details[open]{box-shadow:0 10px 30px rgba(27,39,51,.08)}
+  .faq summary{list-style:none;cursor:pointer;font-family:'Fraunces',serif;font-weight:600;font-size:1.08rem;padding:20px 0;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary .fq-plus{flex:none;width:22px;height:22px;position:relative;transition:.2s}
+  .faq summary .fq-plus::before,.faq summary .fq-plus::after{content:"";position:absolute;background:var(--orange);border-radius:2px}
+  .faq summary .fq-plus::before{top:10px;left:2px;right:2px;height:2px}
+  .faq summary .fq-plus::after{left:10px;top:2px;bottom:2px;width:2px;transition:.2s}
+  .faq details[open] summary .fq-plus::after{transform:scaleY(0)}
+  .faq details p{color:var(--ink-2);padding:0 0 22px;font-size:1rem}
 
   /* ---------- live listings ---------- */
   .listings{background:var(--tan-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .mls-frame{background:var(--paper);border:1px solid var(--line);border-radius:20px;box-shadow:0 22px 55px rgba(27,39,51,.14);overflow:hidden}
+  .mls-frame{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:20px;box-shadow:0 22px 55px rgba(27,39,51,.14);overflow:hidden}
+  .mls-tap{display:none}
   .mls-frame .mf-bar{display:flex;align-items:center;gap:10px;background:var(--ink);color:#EFE7D8;padding:13px 20px;font-size:.85rem;font-weight:600}
   .mls-frame .mf-bar .live{display:inline-flex;align-items:center;gap:7px;color:#8CE0A1;font-weight:800;letter-spacing:.08em;font-size:.75rem}
   .mls-frame .mf-bar .live i{width:8px;height:8px;border-radius:50%;background:#4ADE80;display:block;animation:pulse 1.6s infinite}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+  .mls-view{width:100%}
   .mls-frame iframe{width:100%;height:760px;border:0;display:block;background:#fff}
   .mls-actions{display:flex;justify-content:center;gap:14px;margin-top:26px;flex-wrap:wrap}
-  @media(max-width:700px){.mls-frame iframe{height:640px}}
+  @media(max-width:700px){
+    /* Phones: force the Matrix portal to render its DESKTOP two-pane layout (map + cards)
+       at a fixed logical width, then scale it down to fit. JS (sizeMls) sets the exact
+       width/height/scale. pointer-events off + tap overlay = no nested-scroll trap. */
+    .mls-view{overflow:hidden}
+    .mls-frame iframe{pointer-events:none;transform-origin:0 0}
+    .mls-tap{display:flex;position:absolute;left:0;right:0;top:44px;bottom:0;align-items:flex-end;justify-content:center;padding:16px;background:linear-gradient(to top,rgba(15,23,31,.6),rgba(15,23,31,.05) 42%,transparent 70%)}
+    .mls-tap span{display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:#fff;font-weight:700;font-size:.95rem;padding:13px 22px;border-radius:10px;box-shadow:0 10px 24px rgba(199,80,31,.4)}
+  }
 
   /* ---------- gallery ---------- */
   .gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
@@ -210,6 +267,22 @@
   @media(max-width:860px){.area-grid{grid-template-columns:1fr;text-align:center}.towns{justify-content:center}}
 
   /* ---------- contact ---------- */
+  .cta-band{position:relative;overflow:hidden;background:var(--ink);text-align:center;padding:120px 0}
+  .cta-band .cta-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.38}
+  .cta-band::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(27,39,51,.55) 0%,rgba(27,39,51,.93) 100%)}
+  .cta-in{position:relative;z-index:1}
+  .cta-band h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2rem,4.4vw,3.1rem);color:#F8F3EA;margin:14px 0 12px;text-shadow:0 2px 20px rgba(27,39,51,.5)}
+  .cta-band p{color:rgba(239,231,216,.88);max-width:34rem;margin:0 auto 30px;font-size:1.05rem;text-shadow:0 1px 12px rgba(27,39,51,.5)}
+  .cta-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+  @media(max-width:700px){
+    .cta-band{padding:0 0 64px}
+    .cta-band .cta-vid{position:static;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;opacity:.8;display:block}
+    .cta-band::before{display:none}
+    .cta-in{padding-top:36px}
+    .cta-band h2{text-shadow:none}
+    .cta-band p{text-shadow:none}
+  }
+  @media(prefers-reduced-motion:reduce){.cta-band .cta-vid{display:none}}
   .contact{background:var(--tan-2);border-top:1px solid var(--line)}
   .c-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:52px;align-items:start}
   .c-grid h2{font-size:clamp(1.9rem,3.4vw,2.5rem);margin:16px 0 18px}
@@ -233,10 +306,11 @@
   input:focus,select:focus,textarea:focus{outline:none;border-color:var(--orange);background:#fff}
   form .btn{width:100%;justify-content:center;padding:16px;font-size:1.02rem;margin-top:6px}
   .f-fine{font-size:.72rem;color:var(--ink-2);margin-top:14px;text-align:center}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
   @media(max-width:900px){.c-grid{grid-template-columns:1fr}.f-row{grid-template-columns:1fr}form{padding:28px 22px}}
 
   /* ---------- footer ---------- */
-  footer{background:var(--ink);color:#9FA8B0;padding:44px 0 110px;font-size:.84rem}
+  footer{background:var(--ink);color:#9FA8B0;padding:44px 0;font-size:.84rem}
   .foot{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap}
   .foot .fb1{font-family:'Fraunces',serif;font-weight:700;font-size:1.1rem;color:#F3EBDC}
   .foot .fb2{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:2px}
@@ -244,20 +318,47 @@
   .foot a{color:#C9C0AD}
   .foot a:hover{color:var(--gold)}
   .foot .legal{margin-top:10px;line-height:1.8}
-  @media(max-width:640px){.foot{flex-direction:column;text-align:center}.foot .fcol{margin:0 auto}}
+  .foot .flinks{display:grid;gap:6px;margin-bottom:12px}
+  @media(max-width:640px){.foot{flex-direction:column;text-align:center}.foot .fcol{margin:0 auto}.foot .legal{flex-direction:column!important;align-items:center!important}.foot .legal img{margin:0 auto 8px}}
 
   /* ---------- sticky call bar ---------- */
-  .callbar{position:fixed;bottom:0;left:0;right:0;z-index:60;display:none;grid-template-columns:1fr 1fr;gap:1px;background:var(--line)}
+  .callbar{position:fixed;bottom:0;left:0;right:0;z-index:60;display:none;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);transform:translateY(102%);transition:transform .35s ease}
+  .callbar.show{transform:translateY(0)}
   .callbar a{display:flex;align-items:center;justify-content:center;gap:9px;padding:16px;font-weight:700;font-size:.98rem}
   .callbar .cb-call{background:var(--orange);color:#fff}
   .callbar .cb-text{background:var(--ink);color:#F3EBDC}
   .callbar .icon{width:19px;height:19px}
-  @media(max-width:860px){.callbar{display:grid}}
+  @media(max-width:860px){.callbar{display:grid}footer{padding-bottom:110px}}
+
+  /* photo lightbox */
+  .gal-grid img{cursor:zoom-in}
+  .lb-overlay{position:fixed;inset:0;z-index:200;background:rgba(15,23,31,.93);display:flex;align-items:center;justify-content:center;padding:30px;opacity:0;pointer-events:none;transition:opacity .25s;backdrop-filter:blur(4px)}
+  .lb-overlay.on{opacity:1;pointer-events:auto}
+  .lb-overlay img{max-width:92vw;max-height:88vh;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.6);transform:scale(.96);transition:transform .25s}
+  .lb-overlay.on img{transform:scale(1)}
+  .lb-close{position:absolute;top:22px;right:26px;width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.12);border:none;color:#fff;font-size:1.7rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.15s}
+  .lb-close:hover{background:var(--orange)}
+  .lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.12);border:none;color:#fff;font-size:2rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.15s}
+  .lb-nav:hover{background:var(--orange)}
+  .lb-prev{left:20px}.lb-next{right:20px}
+  @media(max-width:640px){.lb-nav{width:42px;height:42px;font-size:1.5rem}.lb-prev{left:8px}.lb-next{right:8px}.lb-close{top:14px;right:14px}}
 
   /* reveal animation */
   .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
   .rv.on{opacity:1;transform:none}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"What does it cost to work with Joe?","acceptedAnswer":{"@type":"Answer","text":"If you're buying, the seller typically pays the buyer's agent — so Joe's help usually costs you nothing. If you're selling, the commission is agreed on upfront before you list, with no surprises."}},
+    {"@type":"Question","name":"How fast can you sell my house?","acceptedAnswer":{"@type":"Answer","text":"It depends on price and condition. Priced right, Corpus Christi homes often sell in weeks. If you need out fast, Joe can make a direct cash offer and close on your timeline."}},
+    {"@type":"Question","name":"Should I list it or take a cash offer?","acceptedAnswer":{"@type":"Answer","text":"Listing on the market usually nets the most money. A cash offer is fastest and skips repairs and showings. Joe runs both numbers and tells you straight which one puts more in your pocket."}},
+    {"@type":"Question","name":"What areas does Joe cover?","acceptedAnswer":{"@type":"Answer","text":"Corpus Christi, Portland, Calallen, Flour Bluff, Rockport, Ingleside, Robstown, Aransas Pass, and North Padre Island."}}
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -277,27 +378,27 @@
         <div class="submenu">
           <div class="sm-col">
             <div class="sm-h" data-i18n="smH1">Sell Your House</div>
-            <a href="#sell"><span data-i18n="sm1">Sell Your Home</span><small data-i18n="sm1s">Full-service listing, top dollar</small></a>
-            <a href="#contact"><span data-i18n="sm2">Free Home Valuation</span><small data-i18n="sm2s">What's it worth today?</small></a>
+            <a href="sell-your-home.html"><span data-i18n="sm1">Sell Your Home</span><small data-i18n="sm1s">Full-service listing, top dollar</small></a>
+            <a href="home-valuation.html"><span data-i18n="sm2">Free Home Valuation</span><small data-i18n="sm2s">What's it worth today?</small></a>
             <a href="#cash"><span data-i18n="sm3">Get a Cash Offer</span><small data-i18n="sm3s">As-is, close on your timeline</small></a>
-            <a href="#cash"><span data-i18n="sm4">Stop Foreclosure</span><small data-i18n="sm4s">Fast options, straight answers</small></a>
-            <a href="#cash"><span data-i18n="sm5">Sell an Inherited House</span><small data-i18n="sm5s">No cleanout, no repairs</small></a>
+            <a href="#situations"><span data-i18n="sm4">Stop Foreclosure</span><small data-i18n="sm4s">Fast options, straight answers</small></a>
+            <a href="#situations"><span data-i18n="sm5">Sell an Inherited House</span><small data-i18n="sm5s">No cleanout, no repairs</small></a>
           </div>
           <div class="sm-col">
             <div class="sm-h" data-i18n="smH2">Buy</div>
-            <a href="#work"><span data-i18n="sm6">Buy a Home</span><small data-i18n="sm6s">Joe's commission costs you $0</small></a>
-            <a href="#work"><span data-i18n="sm7">First-Time Buyers</span><small data-i18n="sm7s">Best lenders, zero pressure</small></a>
+            <a href="buy-a-home.html"><span data-i18n="sm6">Buy a Home</span><small data-i18n="sm6s">Joe's commission costs you $0</small></a>
+            <a href="first-time-buyers.html"><span data-i18n="sm7">First-Time Buyers</span><small data-i18n="sm7s">Best lenders, zero pressure</small></a>
           </div>
           <div class="sm-col">
             <div class="sm-h" data-i18n="smH3">Invest &amp; Renovate</div>
-            <a href="#cash"><span data-i18n="sm8">Investment &amp; Wholesale</span><small data-i18n="sm8s">Deals for Joe's investor network</small></a>
-            <a href="#work"><span data-i18n="sm9">Pre-Sale Renovations</span><small data-i18n="sm9s">Fix it to sell it — Joe's crew</small></a>
+            <a href="#situations"><span data-i18n="sm8">Investment &amp; Wholesale</span><small data-i18n="sm8s">Deals for Joe's investor network</small></a>
+            <a href="#situations"><span data-i18n="sm9">Pre-Sale Renovations</span><small data-i18n="sm9s">Fix it to sell it — Joe's crew</small></a>
           </div>
           <div class="sm-foot">
             <div class="sm-cities">
               <span class="sm-city">Portland</span><span class="sm-city">Calallen</span><span class="sm-city">Flour Bluff</span><span class="sm-city">Robstown</span><span class="sm-city">Rockport</span><span class="sm-city">Ingleside</span>
             </div>
-            <span class="sm-badge" data-i18n="smBadge">15 PAGES · EVERY ONE BUILT TO RANK</span>
+            <span class="sm-badge" data-i18n="smBadge">TALK TO JOE TODAY</span>
           </div>
         </div>
       </div>
@@ -328,11 +429,12 @@
           <svg class="icon" viewBox="0 0 24 24"><path d="M13 2a9 9 0 0 1 9 9"/><path d="M13 6a5 5 0 0 1 5 5"/><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
           <span data-i18n="heroCta1">Call or Text Joe</span>
         </a>
-        <a class="btn btn-ghost-w" href="#cash">
-          <svg class="icon" viewBox="0 0 24 24"><path d="M11 15h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 17"/><path d="m7 21 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"/><path d="m2 16 6 6"/><circle cx="16" cy="9" r="2.9"/><circle cx="6" cy="5" r="3"/></svg>
-          <span data-i18n="heroCta2">Get a Cash Offer</span>
+        <a class="btn btn-ghost-w" href="home-valuation.html">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+          <span data-i18n="heroCta2">What's My Home Worth?</span>
         </a>
       </div>
+      <p class="hero-note" data-i18n="heroNote"><svg class="icon" viewBox="0 0 24 24" style="width:16px;height:16px;color:var(--gold)"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Call or text — Joe answers 24/7, usually within minutes.</p>
       <div class="chips">
         <span class="chip"><svg class="icon" viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><b>5.0</b>&nbsp;<span data-i18n="chip1">on Zillow</span></span>
         <span class="chip"><svg class="icon" viewBox="0 0 24 24"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><b>99</b>&nbsp;<span data-i18n="chip2">homes closed</span></span>
@@ -360,7 +462,7 @@
   </div>
 </div>
 
-<section id="sell">
+<section id="cash">
   <div class="wrap">
     <div class="center-head rv">
       <span class="eyebrow"><span class="dash">—</span> <span data-i18n="waysEyebrow">Two Ways To Sell</span> <span class="dash">—</span></span>
@@ -380,7 +482,7 @@
         </ul>
         <a class="btn btn-ink" href="#contact" data-i18n="way1Btn">Get a Free Home Valuation</a>
       </div>
-      <div class="way cash rv" id="cash">
+      <div class="way cash rv">
         <div class="w-ic"><svg class="icon" viewBox="0 0 24 24"><path d="M11 15h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 17"/><path d="m7 21 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"/><path d="m2 16 6 6"/><circle cx="16" cy="9" r="2.9"/><circle cx="6" cy="5" r="3"/></svg></div>
         <h3 data-i18n="way2H">Sell It As-Is, For Cash</h3>
         <div class="w-sub" data-i18n="way2Sub">For speed &amp; simplicity</div>
@@ -391,6 +493,42 @@
           <li><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span data-i18n="way2L3">Not a fit for Joe? He connects you with his investor network</span></li>
         </ul>
         <a class="btn btn-orange" href="#contact" data-i18n="way2Btn">Request a Cash Offer</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="situations" id="situations">
+  <div class="wrap">
+    <div class="center-head rv">
+      <span class="eyebrow"><span class="dash">—</span> <span data-i18n="sitEyebrow">No Matter The Situation</span> <span class="dash">—</span></span>
+      <h2 data-i18n="sitH2">In a tough spot? Joe's seen it —<br>and knows the way out.</h2>
+      <p data-i18n="sitP">Foreclosure, an inherited house, an investment deal, a home that needs work before it can sell — these are the calls Joe gets every week. Here's how he handles each one.</p>
+    </div>
+    <div class="sit-grid">
+      <div class="sit rv">
+        <div class="s-ic"><svg class="icon" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></div>
+        <h3 data-i18n="sit1H">Stop Foreclosure</h3>
+        <p data-i18n="sit1P">Behind on payments? You have more options than that bank letter makes it feel like — and the earlier you act, the more of them you keep. Joe will lay them out straight: sell fast for cash before the auction date, list it if there's time to get more, or tell you honestly if selling isn't your best move. No judgment, no pressure — a plan.</p>
+        <a class="s-cta" href="tel:3619601779"><span data-i18n="sitCta1">Talk it through with Joe</span> →</a>
+      </div>
+      <div class="sit rv">
+        <div class="s-ic"><svg class="icon" viewBox="0 0 24 24"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"/><circle cx="16.5" cy="7.5" r=".5" fill="currentColor"/></svg></div>
+        <h3 data-i18n="sit2H">Sell an Inherited House</h3>
+        <p data-i18n="sit2P">Inherited a property you can't maintain — maybe from another city, maybe full of a lifetime of belongings? Joe buys inherited houses as-is: no cleanout, no repairs, no showings. And if the numbers say you'd come out ahead listing it instead, he'll tell you that too.</p>
+        <a class="s-cta" href="tel:3619601779"><span data-i18n="sitCta2">Talk it through with Joe</span> →</a>
+      </div>
+      <div class="sit rv">
+        <div class="s-ic"><svg class="icon" viewBox="0 0 24 24"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg></div>
+        <h3 data-i18n="sit3H">Investment &amp; Wholesale</h3>
+        <p data-i18n="sit3P">Joe isn't just an agent — he's an active investor who buys, renovates, and sells his own properties. He wholesales off-market deals to his investor network, and if you're selling a house that fits an investor buyer, he likely already knows who wants it. 99 closed sales means he knows what Coastal Bend numbers have to look like to work.</p>
+        <a class="s-cta" href="tel:3619601779"><span data-i18n="sitCta3">Talk it through with Joe</span> →</a>
+      </div>
+      <div class="sit rv">
+        <div class="s-ic"><svg class="icon" viewBox="0 0 24 24"><path d="m15 12-8.373 8.373a1 1 0 1 1-3-3L12 9"/><path d="m18 15 4-4"/><path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172V7l-2.26-2.26a6 6 0 0 0-4.202-1.756L9 2.96l.92.82A6.18 6.18 0 0 1 12 8.4V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5"/></svg></div>
+        <h3 data-i18n="sit4H">Pre-Sale Renovations</h3>
+        <p data-i18n="sit4P">Fix it to sell it. Before you list, Joe walks your house with a contractor's eye and tells you which repairs actually raise the price — and which aren't worth a dime. It's the same judgment he uses on his own renovations, where his crew takes houses from bought to sold.</p>
+        <a class="s-cta" href="tel:3619601779"><span data-i18n="sitCta4">Talk it through with Joe</span> →</a>
       </div>
     </div>
   </div>
@@ -408,11 +546,15 @@
         <span class="live"><i></i> LIVE</span>
         <span data-i18n="mlsBar">Joe's Office Active Listings · Coastal Bend MLS</span>
       </div>
-      <iframe src="https://joemonceballez.cbmls.mlsmatrix.com/Matrix/Public/?L=1&amp;ap=PP-8" loading="lazy" title="Joe Monceballez active MLS listings"></iframe>
+      <div class="mls-view">
+        <iframe data-src="https://joemonceballez.cbmls.mlsmatrix.com/Matrix/Public/?L=1&amp;ap=PP-8" title="Joe Monceballez active MLS listings"></iframe>
+      </div>
+      <a class="mls-tap" href="https://joemonceballez.cbmls.mlsmatrix.com/Matrix/Public/?L=1&amp;ap=PP-8" target="_blank" rel="noopener" aria-label="Browse Joe's live listings">
+        <span data-i18n="mlsTap"><svg class="icon" viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg> Tap to browse live listings</span>
+      </a>
     </div>
     <div class="mls-actions">
       <a class="btn btn-ink" href="https://joemonceballez.cbmls.mlsmatrix.com/Matrix/Public/?L=1&amp;ap=PP-8" target="_blank" rel="noopener" data-i18n="mlsBtn1">Open the Full Listings Page</a>
-      <a class="btn btn-orange" href="#contact" data-i18n="mlsBtn2">Get New-Listing Alerts</a>
     </div>
   </div>
 </section>
@@ -425,12 +567,12 @@
       <p data-i18n="galP">Joe doesn't just list remodeled homes — as the contractor on his own investment properties, he runs the renovations himself. New kitchens, new baths, new floors: this is his work, start to finish.</p>
     </div>
     <div class="gal-grid">
-      <img class="rv" src="assets/hero-house.jpg" alt="Remodeled home exterior, Corpus Christi" loading="lazy">
-      <img class="rv" src="assets/int-kitchen-cherry.jpg" alt="Renovated kitchen with new flooring" loading="lazy">
+      <img class="rv" src="assets/work-during-drywall.jpg" alt="Joe's crew finishing drywall during a kitchen renovation" loading="lazy">
+      <img class="rv" src="assets/work-during-cabinets.jpg" alt="Cabinet installation in progress by Joe's crew" loading="lazy">
+      <img class="rv" src="assets/work-accent-wall.jpg" alt="Black 3D accent wall installed during a renovation" loading="lazy">
+      <img class="rv" src="assets/work-kitchen-after.jpg" alt="Finished kitchen with new cabinets and countertops" loading="lazy">
+      <img class="rv" src="assets/work-kitchen-after-wide.jpg" alt="Completed kitchen renovation, wide view" loading="lazy">
       <img class="rv" src="assets/int-living.jpg" alt="Living room with fireplace and new wood floors" loading="lazy">
-      <img class="rv" src="assets/house-brick.jpg" alt="Brick home with two-car garage" loading="lazy">
-      <img class="rv" src="assets/int-bath.jpg" alt="Remodeled bathroom with tile surround" loading="lazy">
-      <img class="rv" src="assets/int-kitchen-white.jpg" alt="Renovated white kitchen" loading="lazy">
     </div>
     <div class="buyer-strip rv">
       <div class="bs-ic"><svg class="icon" viewBox="0 0 24 24"><path d="m15.5 7.5 2.3 2.3a1 1 0 0 0 1.4 0l2.1-2.1a1 1 0 0 0 0-1.4L19 4"/><path d="m21 2-9.6 9.6"/><circle cx="7.5" cy="15.5" r="5.5"/></svg></div>
@@ -450,10 +592,10 @@
         <span class="eyebrow"><span class="dash">—</span> <span data-i18n="revEyebrow">Client Reviews</span></span>
         <h2 data-i18n="revH2">The kind of agent who calls<br>a plumber at 10:30 PM</h2>
       </div>
-      <div class="z-badge">
+      <a class="z-badge" href="https://www.zillow.com/profile/monceballezjoe" target="_blank" rel="noopener" title="See Joe's reviews on Zillow">
         <span class="zn">5.0</span>
         <div><div class="z-stars">★★★★★</div><span class="zl"><span data-i18n="revBadge">7 reviews on</span> <svg class="zlogo" viewBox="0 0 122 24" aria-label="Zillow"><path d="M12.006 0L1.086 8.627v3.868c3.386-2.013 11.219-5.13 14.763-6.015.11-.024.16.005.227.078.372.427 1.586 1.899 1.916 2.301a.128.128 0 0 1-.03.195 43.607 43.607 0 0 0-6.67 6.527c-.03.037-.006.043.012.03 2.642-1.134 8.828-2.94 11.622-3.452V8.627zm-.48 11.177c-2.136.708-8.195 3.307-10.452 4.576V24h21.852v-7.936c-2.99.506-11.902 3.16-15.959 5.246a.183.183 0 0 1-.23-.036l-2.044-2.429c-.055-.061-.062-.098.011-.208 1.574-2.3 4.789-5.899 6.833-7.418.042-.03.031-.06-.012-.042Z"/><text x="28" y="19" font-family="Arial, sans-serif" font-weight="bold" font-size="17" fill="#006AFF">Zillow</text></svg></span></div>
-      </div>
+      </a>
     </div>
     <div class="rev-grid">
       <div class="rev rv">
@@ -471,6 +613,24 @@
         <p>Joe kept us posted on all activity or actions needed throughout the process, and remained professional at all times. The transaction was completed in 30 days.</p>
         <div class="who">Eddie G. <span data-i18n="rev3who">Sold a home in Calallen · Zillow review</span></div>
       </div>
+      <div class="rev rv">
+        <div class="q">“</div>
+        <p>Joe has been the realtor on three of my investment properties so far. He's doing a fantastic job. He works to keep me as the seller of the home in a profitable situation.</p>
+        <div class="who">James P. <span data-i18n="rev4who">Investor · Bought &amp; sold in Central City · Zillow review</span></div>
+      </div>
+      <div class="rev rv">
+        <div class="q">“</div>
+        <p>I had a really great experience working with Joe. Honest, punctual and up to the mark at all times. Will work with him again anytime.</p>
+        <div class="who">Cyril O. <span data-i18n="rev5who">Sold a home in Kingsville · Zillow review</span></div>
+      </div>
+      <div class="rev rv">
+        <div class="q">“</div>
+        <p>Awesome agent and personal guy. Makes the process smooth and easy for his clients. Very helpful and knowledgeable in what he is doing.</p>
+        <div class="who">ccselltx <span data-i18n="rev6who">Sold a home in Corpus Christi · Zillow review</span></div>
+      </div>
+    </div>
+    <div class="mls-actions" style="margin-top:34px">
+      <a class="btn btn-ink" href="https://www.zillow.com/profile/monceballezjoe" target="_blank" rel="noopener" data-i18n="revAll">Read Joe's Reviews on Zillow</a>
     </div>
   </div>
 </section>
@@ -515,6 +675,48 @@
   </div>
 </section>
 
+<section class="cta-band" id="cta">
+  <video class="cta-vid" autoplay muted loop playsinline preload="metadata" poster="assets/joe-ad-poster.jpg" aria-hidden="true" tabindex="-1">
+    <source src="assets/joe-ad-bg.mp4" type="video/mp4">
+  </video>
+  <div class="wrap cta-in rv">
+    <span class="eyebrow"><span class="dash">—</span> <span data-i18n="ctaEyebrow">Ready When You Are</span> <span class="dash">—</span></span>
+    <h2 data-i18n="ctaH2">Ready to make your move?</h2>
+    <p data-i18n="ctaP">Straight answers on buying, selling, or a cash offer — one call away.</p>
+    <div class="cta-btns">
+      <a class="btn btn-orange" href="tel:3619601779"><svg class="icon" viewBox="0 0 24 24"><path d="M13 2a9 9 0 0 1 9 9"/><path d="M13 6a5 5 0 0 1 5 5"/><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg><span data-i18n="ctaBtn1">Call or Text (361) 960-1779</span></a>
+      <a class="btn btn-white" href="#contact" data-i18n="ctaBtn2">Request a Cash Offer</a>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="center-head rv">
+      <span class="eyebrow"><span class="dash">—</span> <span data-i18n="faqEyebrow">Common Questions</span> <span class="dash">—</span></span>
+      <h2 data-i18n="faqH2">Answers before you call</h2>
+    </div>
+    <div class="faq rv">
+      <details>
+        <summary><span data-i18n="faqQ1">What does it cost to work with Joe?</span><span class="fq-plus"></span></summary>
+        <p data-i18n="faqA1">If you're buying, the seller typically pays the buyer's agent — so Joe's help usually costs you nothing. If you're selling, the commission is agreed on upfront before you list, with no surprises.</p>
+      </details>
+      <details>
+        <summary><span data-i18n="faqQ2">How fast can you sell my house?</span><span class="fq-plus"></span></summary>
+        <p data-i18n="faqA2">It depends on price and condition. Priced right, Corpus Christi homes often sell in weeks. If you need out fast, Joe can make a direct cash offer and close on your timeline.</p>
+      </details>
+      <details>
+        <summary><span data-i18n="faqQ3">Should I list it or take a cash offer?</span><span class="fq-plus"></span></summary>
+        <p data-i18n="faqA3">Listing on the market usually nets the most money. A cash offer is fastest and skips repairs and showings. Joe runs both numbers and tells you straight which one puts more in your pocket.</p>
+      </details>
+      <details>
+        <summary><span data-i18n="faqQ4">What areas does Joe cover?</span><span class="fq-plus"></span></summary>
+        <p data-i18n="faqA4">Corpus Christi, Portland, Calallen, Flour Bluff, Rockport, Ingleside, Robstown, Aransas Pass, and North Padre Island.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 <section class="contact" id="contact">
   <div class="wrap c-grid">
     <div class="c-left rv">
@@ -531,27 +733,30 @@
         <a class="soc" href="https://www.tiktok.com/@joemonceballez" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
       </div>
     </div>
-    <form class="rv" onsubmit="return demoSubmit(event)">
-      <!-- Demo form: visual placeholder. Wire to FormSubmit/GHL at launch. REPLACE-WITH-CLIENT-EMAIL -->
+    <form class="lead-form rv" id="leadForm">
+      <!-- FormSubmit AJAX -> joe@homesincorpus.com. First real submit triggers Joe's one-time activation email. -->
+      <input type="hidden" name="_subject" value="New lead from homesincorpus.com (Homepage)">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="Source page" value="Homepage">
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
       <h3 data-i18n="fH">Tell Joe what you need</h3>
       <p class="f-sub" data-i18n="fSub">He'll get back to you the same day — usually a lot faster.</p>
       <div class="f-field">
         <label data-i18n="fL1">I'm looking to…</label>
-        <select required id="fSelect">
+        <select required name="Looking to" id="fSelect">
           <option value="" data-i18n="fO0">Choose one</option>
           <option data-i18n="fO1">Sell my home (list it)</option>
           <option data-i18n="fO2">Get a cash offer on my house</option>
           <option data-i18n="fO3">Buy a home</option>
-          <option data-i18n="fO4">Get new-listing alerts</option>
           <option data-i18n="fO5">Talk investing / wholesale deals</option>
         </select>
       </div>
       <div class="f-row">
-        <div class="f-field"><label data-i18n="fL2">Name</label><input type="text" data-ph="phName" placeholder="Your name" required></div>
-        <div class="f-field"><label data-i18n="fL3">Phone</label><input type="tel" placeholder="(361) 555-0123" required></div>
+        <div class="f-field"><label data-i18n="fL2">Name</label><input type="text" name="Name" data-ph="phName" placeholder="Your name" required></div>
+        <div class="f-field"><label data-i18n="fL3">Phone</label><input type="tel" name="Phone" placeholder="(361) 555-0123" required></div>
       </div>
-      <div class="f-field"><label><span data-i18n="fL4">Property address</span> <span style="text-transform:none;font-weight:500" data-i18n="fL4b">(if selling)</span></label><input type="text" data-ph="phAddr" placeholder="Street address, city"></div>
-      <div class="f-field"><label data-i18n="fL5">Anything else?</label><textarea rows="3" data-ph="phMsg" placeholder="Timeline, condition, questions…"></textarea></div>
+      <div class="f-field"><label><span data-i18n="fL4">Property address</span> <span style="text-transform:none;font-weight:500" data-i18n="fL4b">(if selling)</span></label><input type="text" name="Property address" data-ph="phAddr" placeholder="Street address, city"></div>
+      <div class="f-field"><label data-i18n="fL5">Anything else?</label><textarea rows="3" name="Message" data-ph="phMsg" placeholder="Timeline, condition, questions…"></textarea></div>
       <button class="btn btn-orange" type="submit">
         <svg class="icon" viewBox="0 0 24 24"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>
         <span data-i18n="fBtn">Send It to Joe</span>
@@ -566,10 +771,16 @@
     <div class="fcol">
       <div class="fb1">Joe Monceballez</div>
       <div class="fb2" data-i18n="ftRole">Realtor · Investor · Contractor</div>
-      <p class="legal" style="display:flex;align-items:flex-start;gap:10px"><img src="assets/valtex-logo.png" alt="ValTex Realty" style="height:34px;width:auto;margin-top:4px;filter:drop-shadow(0 0 3px rgba(255,255,255,.25))"><span>ValTex Realty · Corpus Christi, TX<br>TREC License #0586828 · <a href="tel:3619601779">(361) 960-1779</a> · <a href="mailto:joe@homesincorpus.com">joe@homesincorpus.com</a></span></p>
+      <p class="legal" style="display:flex;align-items:flex-start;gap:10px"><img src="assets/valtex-logo.png" alt="ValTex Realty" style="height:48px;width:auto;margin-top:2px;filter:drop-shadow(0 0 3px rgba(255,255,255,.25))"><span>ValTex Realty · Corpus Christi, TX<br>TREC License #0586828 · <a href="tel:3619601779">(361) 960-1779</a> · <a href="mailto:joe@homesincorpus.com">joe@homesincorpus.com</a></span></p>
     </div>
     <div class="fcol">
-      <p class="legal"><a href="https://www.trec.texas.gov/forms/consumer-protection-notice" target="_blank" rel="noopener">TREC Consumer Protection Notice</a><br><a href="https://www.trec.texas.gov/" target="_blank" rel="noopener">Texas Real Estate Commission Information About Brokerage Services</a><br>© 2026 Joe Monceballez · All rights reserved</p>
+      <div class="flinks">
+        <a href="sell-your-home.html">Sell Your Home</a>
+        <a href="home-valuation.html">Free Home Valuation</a>
+        <a href="buy-a-home.html">Buy a Home</a>
+        <a href="first-time-buyers.html">First-Time Buyers</a>
+      </div>
+      <p class="legal"><a href="https://www.trec.texas.gov/forms/consumer-protection-notice" target="_blank" rel="noopener">TREC Consumer Protection Notice</a><br><a href="https://www.trec.texas.gov/" target="_blank" rel="noopener">Texas Real Estate Commission Information About Brokerage Services</a><br><a href="privacy-policy.html">Privacy Policy</a> · <a href="terms-of-service.html">Terms of Service</a><br>© 2026 Joe Monceballez · All rights reserved<br><a href="https://zonkelmedia.com" target="_blank" rel="noopener">Web Design by Zonkel Media</a></p>
     </div>
   </div>
 </footer>
@@ -584,15 +795,105 @@
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), {threshold:.12});
   document.querySelectorAll('.rv').forEach(el => io.observe(el));
 
-  /* ---------- demo form ---------- */
-  function demoSubmit(e){
-    e.preventDefault();
+  /* ---------- mobile callbar: slide in only after the hero scrolls out ---------- */
+  const callbarEl = document.querySelector('.callbar');
+  const heroEl = document.querySelector('header.hero');
+  if (callbarEl){
+    if (heroEl){
+      new IntersectionObserver(es => es.forEach(e => callbarEl.classList.toggle('show', !e.isIntersecting)))
+        .observe(heroEl);
+    } else {
+      const cbOnScroll = () => callbarEl.classList.toggle('show', scrollY > 320);
+      addEventListener('scroll', cbOnScroll, {passive:true}); cbOnScroll();
+    }
+  }
+
+  /* ---------- mobile burger menu (drawer cloned from desktop nav links) ---------- */
+  const navInEl = document.querySelector('nav .nav-in');
+  const navLinksEl = document.querySelector('nav .nav-links');
+  if (navInEl && navLinksEl){
+    const BARS = '<svg class="icon" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>';
+    const CROSS = '<svg class="icon" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>';
+    const burger = document.createElement('button');
+    burger.className = 'burger'; burger.setAttribute('aria-label', 'Menu'); burger.innerHTML = BARS;
+    navInEl.querySelector('.nav-right').prepend(burger);
+    const drawer = document.createElement('div');
+    drawer.className = 'mobile-menu'; drawer.innerHTML = navLinksEl.innerHTML;
+    document.body.appendChild(drawer);
+    const setMenu = open => {
+      document.body.classList.toggle('menu-open', open);
+      burger.innerHTML = open ? CROSS : BARS;
+      if (open) drawer.style.top = document.querySelector('nav').getBoundingClientRect().bottom + 'px';
+    };
+    burger.addEventListener('click', () => setMenu(!document.body.classList.contains('menu-open')));
+    drawer.addEventListener('click', e => { if (e.target.closest('a[href]')) setMenu(false); });
+  }
+
+  /* ---------- MLS iframe: load only once the listings section is on screen and scrolling
+     has settled. The MLS Matrix portal focuses its search box on load, which yanks the page's
+     scroll to the iframe — loading it early hijacks anchor jumps like index.html#cash. ---------- */
+  const mlsFrame = document.querySelector('.mls-frame iframe[data-src]');
+  if (mlsFrame){
+    let visible = false, scrollTimer = null, loaded = false;
+    const loadMls = () => { if (!loaded && visible){ loaded = true; mlsFrame.src = mlsFrame.dataset.src; } };
+    const armed = () => { if (visible && !loaded){ clearTimeout(scrollTimer); scrollTimer = setTimeout(loadMls, 450); } };
+    const mio = new IntersectionObserver(es => es.forEach(e => {
+      visible = e.isIntersecting;
+      if (visible) armed(); else clearTimeout(scrollTimer);
+    }), {threshold:.25});
+    mio.observe(mlsFrame);
+    addEventListener('scroll', () => { if (visible && !loaded) armed(); }, {passive:true});
+  }
+
+  /* ---------- MLS on mobile: render Matrix's desktop two-pane layout at a fixed logical
+     width, then crop to JUST the listings column (map + portal header shifted out of the
+     overflow:hidden window) and zoom it to fill the phone. ---------- */
+  (function(){
+    const view = document.querySelector('.mls-view');
+    const ifr = view && view.querySelector('iframe');
+    if (!view || !ifr) return;
+    const BASE_W = 1150, BASE_H = 1600;   // render the desktop two-pane, then scale it to fit the phone
+    let raf = null;
+    const sizeMls = () => {
+      if (window.innerWidth <= 700){
+        const s = view.clientWidth / BASE_W;
+        ifr.style.width = BASE_W + 'px';
+        ifr.style.height = BASE_H + 'px';
+        ifr.style.transformOrigin = '0 0';
+        ifr.style.transform = 'scale(' + s + ')';
+        view.style.height = (BASE_H * s) + 'px';
+      } else {
+        ifr.style.width = ''; ifr.style.height = ''; ifr.style.transform = ''; ifr.style.transformOrigin = ''; view.style.height = '';
+      }
+    };
+    sizeMls();
+    addEventListener('resize', () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(sizeMls); });
+  })();
+
+  /* ---------- contact form (FormSubmit AJAX -> joe@homesincorpus.com) ---------- */
+  const LEAD_ENDPOINT = 'https://formsubmit.co/ajax/joe@homesincorpus.com';
+  function leadSuccess(form){
     const es = document.documentElement.lang === 'es';
-    e.target.innerHTML = es
+    form.innerHTML = es
       ? '<h3 style="margin-bottom:8px">¡Listo! Joe se comunicará contigo. 🤙</h3><p class="f-sub">¿Lo necesitas ahora mismo? Llama o manda texto al <a href="tel:3619601779" style="color:var(--orange);font-weight:700">(361) 960-1779</a>.</p>'
       : '<h3 style="margin-bottom:8px">Got it — Joe will be in touch. 🤙</h3><p class="f-sub">Need him right now? Call or text <a href="tel:3619601779" style="color:var(--orange);font-weight:700">(361) 960-1779</a>.</p>';
-    return false;
   }
+  const leadForm = document.getElementById('leadForm');
+  if (leadForm) leadForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    const honey = leadForm.querySelector('input[name="_honey"]');
+    const btn = leadForm.querySelector('button[type="submit"]');
+    if (btn){ btn.disabled = true; btn.style.opacity = '.7'; }
+    if (honey && honey.value){ leadSuccess(leadForm); return; }
+    fetch(LEAD_ENDPOINT, { method:'POST', headers:{'Accept':'application/json'}, body:new FormData(leadForm) })
+      .then(r => r.json()).then(() => leadSuccess(leadForm))
+      .catch(() => {
+        const es = document.documentElement.lang === 'es';
+        leadForm.innerHTML = es
+          ? '<h3 style="margin-bottom:8px">Casi listo 🤙</h3><p class="f-sub">No pudimos enviar el formulario. Llama o manda texto a <a href="tel:3619601779" style="color:var(--orange);font-weight:700">(361) 960-1779</a> y Joe te atiende enseguida.</p>'
+          : '<h3 style="margin-bottom:8px">Almost there 🤙</h3><p class="f-sub">We couldn\'t submit the form. Call or text <a href="tel:3619601779" style="color:var(--orange);font-weight:700">(361) 960-1779</a> and Joe will take care of you right away.</p>';
+      });
+  });
 
   /* ---------- EN/ES translation ---------- */
   const ES = {
@@ -611,11 +912,12 @@
     sm7:'Compradores Primerizos', sm7s:'Los mejores prestamistas, sin presión',
     sm8:'Inversión y Wholesale', sm8s:'Tratos para la red de Joe',
     sm9:'Renovaciones Pre-Venta', sm9s:'Repararla para venderla — el equipo de Joe',
-    smBadge:'15 PÁGINAS · TODAS HECHAS PARA POSICIONAR',
+    smBadge:'HABLA CON JOE HOY',
     heroEyebrow:'Corpus Christi, Texas',
     heroH1:'¿Comprando, vendiendo, o atorado con una casa? <em>Llama a Joe.</em>',
     heroLead:'Comprar, vender, invertir o remodelar — Joe se encarga de todo. Casas listadas al mejor precio, compradores de primera casa, ofertas en efectivo por casas que necesitan venderse rápido, y renovaciones que él mismo dirige.',
-    heroCta1:'Llama o Manda Texto', heroCta2:'Pide una Oferta en Efectivo',
+    heroCta1:'Llama o Manda Texto', heroCta2:'¿Cuánto Vale Tu Casa?',
+    heroNote:'<svg class="icon" viewBox="0 0 24 24" style="width:16px;height:16px;color:var(--gold)"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Llama o manda texto — Joe responde 24/7, normalmente en minutos.',
     chip1:'en Zillow', chip2:'casas cerradas', chip3:'Renueva sus propias casas',
     jcRole:'Realtor · Inversionista · Contratista', jcBtn:'Habla con Joe Hoy',
     st1:'Casas Cerradas', st1s:'ventas de carrera', st2:'Calificación Zillow', st2s:'7 reseñas de clientes', st3:'Años con Licencia', st4:'Disponible', st4s:'llama o manda texto',
@@ -630,9 +932,22 @@
     way2P:'¿Heredaste una propiedad? ¿Reparaciones atrasadas? ¿Necesitas salir rápido? Joe compra casas directamente y las renueva con su propio equipo — sin visitas, sin reparaciones, sin esperar el préstamo de un comprador.',
     way2L1:'Sin reparaciones, sin limpieza — él es el contratista', way2L2:'Cierra en el tiempo que tú necesites', way2L3:'¿No es para Joe? Te conecta con su red de inversionistas',
     way2Btn:'Pide tu Oferta en Efectivo',
+    sitEyebrow:'Sea Cual Sea Tu Situación',
+    sitH2:'¿En un aprieto? Joe lo ha visto —<br>y conoce la salida.',
+    sitP:'Una ejecución hipotecaria, una casa heredada, un negocio de inversión, una casa que necesita arreglos antes de venderse — estas son las llamadas que Joe recibe cada semana. Así resuelve cada una.',
+    sit1H:'Detén la Ejecución',
+    sit1P:'¿Atrasado en los pagos? Tienes más opciones de las que esa carta del banco te hace sentir — y entre más pronto actúes, más opciones conservas. Joe te las explica sin rodeos: vender rápido en efectivo antes de la subasta, ponerla en venta si hay tiempo para sacar más, o decirte honestamente si vender no es tu mejor jugada. Sin juicios, sin presión — un plan.',
+    sit2H:'Casa Heredada',
+    sit2P:'¿Heredaste una propiedad que no puedes mantener — quizás desde otra ciudad, quizás llena de los recuerdos de toda una vida? Joe compra casas heredadas tal como están: sin limpiar, sin reparar, sin visitas. Y si los números dicen que te conviene más ponerla en venta, también te lo dirá.',
+    sit3H:'Inversión y Wholesale',
+    sit3P:'Joe no es solo un agente — es un inversionista activo que compra, renueva y vende sus propias propiedades. Ofrece propiedades fuera del mercado a su red de inversionistas, y si vendes una casa que le queda a un comprador inversionista, probablemente ya sabe quién la quiere. 99 ventas cerradas significan que sabe qué números funcionan en el Coastal Bend.',
+    sit4H:'Renovaciones Pre-Venta',
+    sit4P:'Arréglala para venderla. Antes de ponerla en venta, Joe recorre tu casa con ojo de contratista y te dice qué reparaciones realmente suben el precio — y cuáles no valen ni un centavo. Es el mismo criterio que usa en sus propias renovaciones, donde su equipo lleva las casas de compradas a vendidas.',
+    sitCta1:'Platícalo con Joe', sitCta2:'Platícalo con Joe', sitCta3:'Platícalo con Joe', sitCta4:'Platícalo con Joe',
     mlsEyebrow:'En Vivo del MLS', mlsH2:'Propiedades activas, directo del tablero de Joe',
     mlsP:'Esta lista es en vivo — cada propiedad está en el mercado ahora mismo, desde condominios frente al mar en North Beach hasta ranchos en el condado de Duval. Las nuevas propiedades aparecen aquí en cuanto entran al MLS.',
     mlsBar:'Propiedades Activas de la Oficina de Joe · Coastal Bend MLS',
+    mlsTap:'<svg class="icon" viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg> Toca para ver las propiedades',
     mlsBtn1:'Abrir la Página Completa', mlsBtn2:'Recibe Alertas de Nuevas Propiedades',
     galEyebrow:'Comprada · Renovada · Vendida',
     galH2:'Cuando Joe dice que una casa se puede salvar,<br>él es quien la salva',
@@ -642,8 +957,14 @@
     buyBtn:'Empieza tu Búsqueda',
     revEyebrow:'Reseñas de Clientes',
     revH2:'El tipo de agente que llama<br>al plomero a las 10:30 PM',
-    revBadge:'7 reseñas en',
+    revBadge:'7 reseñas en', revAll:'Lee las Reseñas de Joe en Zillow',
+    faqEyebrow:'Preguntas Frecuentes', faqH2:'Respuestas antes de llamar',
+    faqQ1:'¿Cuánto cuesta trabajar con Joe?', faqA1:'Si estás comprando, normalmente el vendedor paga al agente del comprador — así que la ayuda de Joe casi siempre no te cuesta nada. Si estás vendiendo, la comisión se acuerda desde el principio, sin sorpresas.',
+    faqQ2:'¿Qué tan rápido puedes vender mi casa?', faqA2:'Depende del precio y la condición. Con el precio correcto, las casas en Corpus Christi suelen venderse en semanas. Si necesitas salir rápido, Joe puede hacerte una oferta en efectivo y cerrar en tu tiempo.',
+    faqQ3:'¿Debo listarla o aceptar una oferta en efectivo?', faqA3:'Listarla en el mercado normalmente deja más dinero. Una oferta en efectivo es más rápida y evita reparaciones y visitas. Joe calcula ambas y te dice con franqueza cuál te deja más en el bolsillo.',
+    faqQ4:'¿Qué áreas cubre Joe?', faqA4:'Corpus Christi, Portland, Calallen, Flour Bluff, Rockport, Ingleside, Robstown, Aransas Pass, y North Padre Island.',
     rev1who:'Vendió casa en Central City · Reseña de Zillow', rev2who:'Compró casa en Northwest CC · Reseña de Zillow', rev3who:'Vendió casa en Calallen · Reseña de Zillow',
+    rev4who:'Inversionista · Compró y vendió en Central City · Reseña de Zillow', rev5who:'Vendió casa en Kingsville · Reseña de Zillow', rev6who:'Vendió casa en Corpus Christi · Reseña de Zillow',
     abEyebrow:'Conoce a Joe',
     abH2:'Corpus Christi era su lugar de vacaciones. Lo hizo su hogar.',
     abP1:'Originario de New Braunfels, Joe se mudó a Corpus Christi hace casi dos décadas porque era su lugar favorito en el mundo — y construyó su carrera ayudando a otras familias a echar raíces aquí también.',
@@ -660,15 +981,18 @@
     fBtn:'Envíaselo a Joe',
     fFine:'Al enviar, aceptas que Joe te llame o te mande texto al número que diste. Nada de spam, nunca.',
     ftRole:'Realtor · Inversionista · Contratista',
-    cbCall:'Llama a Joe', cbText:'Textea a Joe'
+    cbCall:'Llama a Joe', cbText:'Textea a Joe',
+    ctaEyebrow:'Listo Cuando Tú Lo Estés',
+    ctaH2:'¿Listo para dar el paso?',
+    ctaP:'Respuestas claras para comprar, vender o una oferta en efectivo — a una llamada de distancia.',
+    ctaBtn1:'Llama o Manda Texto (361) 960-1779', ctaBtn2:'Pide una Oferta en Efectivo'
   };
   const ES_PH = { phName:'Tu nombre', phAddr:'Calle y ciudad', phMsg:'Tiempo, condición, preguntas…' };
   const EN = {}, EN_PH = {};
   document.querySelectorAll('[data-i18n]').forEach(el => { EN[el.dataset.i18n] = el.innerHTML; });
   document.querySelectorAll('[data-ph]').forEach(el => { EN_PH[el.dataset.ph] = el.placeholder; });
 
-  function toggleLang(){
-    const toES = document.documentElement.lang !== 'es';
+  function applyLang(toES){
     document.documentElement.lang = toES ? 'es' : 'en';
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const k = el.dataset.i18n;
@@ -679,7 +1003,38 @@
       el.placeholder = toES ? (ES_PH[k] ?? el.placeholder) : EN_PH[k];
     });
     document.getElementById('langLabel').textContent = toES ? 'EN' : 'ES';
+    try { localStorage.setItem('himc_lang', toES ? 'es' : 'en'); } catch(e){}
   }
+  function toggleLang(){ applyLang(document.documentElement.lang !== 'es'); }
+  try { if (localStorage.getItem('himc_lang') === 'es') applyLang(true); } catch(e){}
+
+  /* ---------- photo lightbox (click to zoom, prev/next, keyboard) ---------- */
+  (function(){
+    const lbImgs = Array.prototype.slice.call(document.querySelectorAll('.gal-grid img, img[data-lb]'));
+    if(!lbImgs.length) return;
+    const ov = document.createElement('div');
+    ov.className = 'lb-overlay';
+    ov.innerHTML = '<button class="lb-close" aria-label="Close">&times;</button>' +
+      '<button class="lb-nav lb-prev" aria-label="Previous">&#8249;</button>' +
+      '<img alt="">' +
+      '<button class="lb-nav lb-next" aria-label="Next">&#8250;</button>';
+    document.body.appendChild(ov);
+    const big = ov.querySelector('img'); let i = 0;
+    const show = n => { i = (n + lbImgs.length) % lbImgs.length; big.src = lbImgs[i].currentSrc || lbImgs[i].src; big.alt = lbImgs[i].alt || ''; };
+    const open = n => { show(n); ov.classList.add('on'); document.body.style.overflow = 'hidden'; };
+    const close = () => { ov.classList.remove('on'); document.body.style.overflow = ''; };
+    lbImgs.forEach((im, idx) => { im.style.cursor = 'zoom-in'; im.addEventListener('click', () => open(idx)); });
+    ov.querySelector('.lb-close').addEventListener('click', close);
+    ov.querySelector('.lb-prev').addEventListener('click', e => { e.stopPropagation(); show(i - 1); });
+    ov.querySelector('.lb-next').addEventListener('click', e => { e.stopPropagation(); show(i + 1); });
+    ov.addEventListener('click', e => { if (e.target === ov) close(); });
+    document.addEventListener('keydown', e => {
+      if (!ov.classList.contains('on')) return;
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowLeft') show(i - 1);
+      else if (e.key === 'ArrowRight') show(i + 1);
+    });
+  })();
 </script>
 </body>
 </html>
