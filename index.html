@@ -330,6 +330,9 @@
   .callbar .icon{width:19px;height:19px}
   @media(max-width:860px){.callbar{display:grid}footer{padding-bottom:110px}}
 
+  /* mobile: desktop-only line breaks off + tighter section headlines (2 lines max) */
+  @media(max-width:640px){.brk{display:none}.center-head h2,.rev-head h2{font-size:1.5rem;line-height:1.15}}
+
   /* photo lightbox */
   .gal-grid img{cursor:zoom-in}
   .lb-overlay{position:fixed;inset:0;z-index:200;background:rgba(15,23,31,.93);display:flex;align-items:center;justify-content:center;padding:30px;opacity:0;pointer-events:none;transition:opacity .25s;backdrop-filter:blur(4px)}
@@ -469,7 +472,7 @@
   <div class="wrap">
     <div class="center-head rv">
       <span class="eyebrow"><span class="dash">—</span> <span data-i18n="waysEyebrow">Two Ways To Sell</span> <span class="dash">—</span></span>
-      <h2 data-i18n="waysH2">Most agents give you one option.<br>Joe gives you two.</h2>
+      <h2 data-i18n="waysH2">Most agents give you one option. <br class="brk">Joe gives you two.</h2>
       <p data-i18n="waysP">Joe is a licensed Realtor, an active investor, and the contractor on his own renovations. That means you pick the path that fits your house and your timeline — and he'll tell you straight which one puts more money in your pocket.</p>
     </div>
     <div class="ways">
@@ -505,7 +508,7 @@
   <div class="wrap">
     <div class="center-head rv">
       <span class="eyebrow"><span class="dash">—</span> <span data-i18n="sitEyebrow">No Matter The Situation</span> <span class="dash">—</span></span>
-      <h2 data-i18n="sitH2">In a tough spot? Joe's seen it —<br>and knows the way out.</h2>
+      <h2 data-i18n="sitH2">In a tough spot? Joe's seen it — <br class="brk">and knows the way out.</h2>
       <p data-i18n="sitP">Foreclosure, an inherited house, an investment deal, a home that needs work before it can sell — these are the calls Joe gets every week. Here's how he handles each one.</p>
     </div>
     <div class="sit-grid">
@@ -566,7 +569,7 @@
   <div class="wrap">
     <div class="center-head rv">
       <span class="eyebrow"><span class="dash">—</span> <span data-i18n="galEyebrow">Bought · Renovated · Sold</span> <span class="dash">—</span></span>
-      <h2 data-i18n="galH2">When Joe says a house can be saved,<br>he's the one who saves it</h2>
+      <h2 data-i18n="galH2">When Joe says a house can be saved, <br class="brk">he's the one who saves it</h2>
       <p data-i18n="galP">Joe doesn't just list remodeled homes — as the contractor on his own investment properties, he runs the renovations himself. New kitchens, new baths, new floors: this is his work, start to finish.</p>
     </div>
     <div class="gal-grid">
@@ -593,7 +596,7 @@
     <div class="rev-head rv">
       <div>
         <span class="eyebrow"><span class="dash">—</span> <span data-i18n="revEyebrow">Client Reviews</span></span>
-        <h2 data-i18n="revH2">The kind of agent who calls<br>a plumber at 10:30 PM</h2>
+        <h2 data-i18n="revH2">The kind of agent who calls <br class="brk">a plumber at 10:30 PM</h2>
       </div>
       <a class="z-badge" href="https://www.zillow.com/profile/monceballezjoe" target="_blank" rel="noopener" title="See Joe's reviews on Zillow">
         <span class="zn">5.0</span>
@@ -926,7 +929,7 @@
     jcRole:'Realtor · Inversionista · Contratista', jcBtn:'Habla con Joe Hoy',
     st1:'Casas Cerradas', st1s:'ventas de carrera', st2:'Calificación Zillow', st2s:'7 reseñas de clientes', st3:'Años con Licencia', st4:'Disponible', st4s:'llama o manda texto',
     waysEyebrow:'Dos Formas de Vender',
-    waysH2:'La mayoría de los agentes te dan una opción.<br>Joe te da dos.',
+    waysH2:'La mayoría de los agentes te dan una opción. <br class="brk">Joe te da dos.',
     waysP:'Joe es Realtor con licencia, inversionista activo, y el contratista de sus propias renovaciones. Tú eliges el camino que le convenga a tu casa y a tu tiempo — y él te dirá con franqueza cuál te deja más dinero en el bolsillo.',
     way1H:'Véndela en el Mercado', way1Sub:'Al mejor precio',
     way1P:'Listado de servicio completo con ValTex Realty — precio correcto, publicidad donde buscan los compradores, y negociación firme a tu favor.',
@@ -937,7 +940,7 @@
     way2L1:'Sin reparaciones, sin limpieza — él es el contratista', way2L2:'Cierra en el tiempo que tú necesites', way2L3:'¿No es para Joe? Te conecta con su red de inversionistas',
     way2Btn:'Pide tu Oferta en Efectivo',
     sitEyebrow:'Sea Cual Sea Tu Situación',
-    sitH2:'¿En un aprieto? Joe lo ha visto —<br>y conoce la salida.',
+    sitH2:'¿En un aprieto? Joe lo ha visto — <br class="brk">y conoce la salida.',
     sitP:'Una ejecución hipotecaria, una casa heredada, un negocio de inversión, una casa que necesita arreglos antes de venderse — estas son las llamadas que Joe recibe cada semana. Así resuelve cada una.',
     sit1H:'Detén la Ejecución',
     sit1P:'¿Atrasado en los pagos? Tienes más opciones de las que esa carta del banco te hace sentir — y entre más pronto actúes, más opciones conservas. Joe te las explica sin rodeos: vender rápido en efectivo antes de la subasta, ponerla en venta si hay tiempo para sacar más, o decirte honestamente si vender no es tu mejor jugada. Sin juicios, sin presión — un plan.',
@@ -954,13 +957,13 @@
     mlsTap:'<svg class="icon" viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg> Toca para ver las propiedades',
     mlsBtn1:'Abrir la Página Completa', mlsBtn2:'Recibe Alertas de Nuevas Propiedades',
     galEyebrow:'Comprada · Renovada · Vendida',
-    galH2:'Cuando Joe dice que una casa se puede salvar,<br>él es quien la salva',
+    galH2:'Cuando Joe dice que una casa se puede salvar, <br class="brk">él es quien la salva',
     galP:'Joe no solo vende casas remodeladas — como contratista de sus propias inversiones, él dirige las renovaciones. Cocinas nuevas, baños nuevos, pisos nuevos: este es su trabajo, de principio a fin.',
     buyH:'¿Comprando? La comisión de Joe te cuesta $0.',
     buyP:'Si eres comprador, no pagas ni un centavo de la comisión de Joe — la paga el vendedor. Tienes un negociador experto que conoce el mercado por dentro y por fuera, conoce <b>los mejores prestamistas del área</b>, y revisa cada casa con ojo de contratista antes de que hagas tu oferta.',
     buyBtn:'Empieza tu Búsqueda',
     revEyebrow:'Reseñas de Clientes',
-    revH2:'El tipo de agente que llama<br>al plomero a las 10:30 PM',
+    revH2:'El tipo de agente que llama <br class="brk">al plomero a las 10:30 PM',
     revBadge:'7 reseñas en', revAll:'Lee las Reseñas de Joe en Zillow',
     faqEyebrow:'Preguntas Frecuentes', faqH2:'Respuestas antes de llamar',
     faqQ1:'¿Cuánto cuesta trabajar con Joe?', faqA1:'Si estás comprando, normalmente el vendedor paga al agente del comprador — así que la ayuda de Joe casi siempre no te cuesta nada. Si estás vendiendo, la comisión se acuerda desde el principio, sin sorpresas.',
