@@ -1,0 +1,25 @@
+plugins = []
+headers = []
+redirects = []
+
+[functions]
+
+[functions."*"]
+
+[build]
+publish = "C:\\Users\\George\\AppData\\Local\\Temp\\claude\\C--Users-George\\fec83e37-d717-4590-9c9d-8a2de7ae85e0\\scratchpad\\homes-in-corpus"
+publishOrigin = "default"
+
+[build.environment]
+
+[build.processing]
+
+[build.processing.css]
+
+[build.processing.html]
+
+[build.processing.images]
+
+[build.processing.js]
+
+[build.services]

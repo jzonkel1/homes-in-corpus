@@ -130,6 +130,8 @@
     navInEl.querySelector('.nav-right').prepend(burger);
     var drawer = document.createElement('div');
     drawer.className = 'mobile-menu'; drawer.innerHTML = navLinksEl.innerHTML;
+    var drawerHome = drawer.querySelector('a[data-i18n="navHome"]');
+    if (drawerHome) drawerHome.parentNode.removeChild(drawerHome); // tapping the logo covers "Home"
     document.body.appendChild(drawer);
     var setMenu = function (open) {
       document.body.classList.toggle('menu-open', open);

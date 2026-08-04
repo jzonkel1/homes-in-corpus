@@ -327,9 +327,15 @@ body.menu-open{overflow:hidden}
 .mobile-menu .sm-col a small{font-size:.8rem}
 .mobile-menu .sm-foot{display:none}
 .mobile-menu>a:first-of-type{margin-top:20px}
-@media(max-width:960px){.burger{display:flex}}
+@media(max-width:960px){
+  /* mobile order: call · language · burger (burger always far right) */
+  .burger{display:flex;order:3}
+  .nav-right{gap:9px}
+  .nav-cta{order:1}
+  .lang-btn{order:2;height:44px;border-radius:12px;padding:0 13px}
+}
 @media(max-width:640px){
-  .nav-cta{font-size:0;gap:0;padding:12px;border-radius:50%}
+  .nav-cta{font-size:0;gap:0;padding:0;width:44px;height:44px;justify-content:center;border-radius:12px}
   .nav-cta .icon{width:20px;height:20px}
   .brand .b1{font-size:1.08rem}
 }
