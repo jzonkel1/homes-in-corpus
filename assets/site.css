@@ -283,6 +283,7 @@ footer{background:var(--ink);color:#9FA8B0;padding:44px 0;font-size:.84rem}
 @media(max-width:640px){.brk{display:none}.center-head h2,.rev-head h2{font-size:1.5rem;line-height:1.15}}
 
 /* ---------- TikTok video strip (swipeable row of embeds) ---------- */
+.mls-actions{display:flex;justify-content:center;gap:14px;margin-top:26px;flex-wrap:wrap}
 .tt-wrap{position:relative}
 .tt-arrow{position:absolute;top:calc(50% - 14px);transform:translateY(-50%);z-index:6;width:50px;height:50px;border-radius:50%;background:var(--ink);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(27,39,51,.30);transition:.15s}
 .tt-arrow .icon{width:24px;height:24px}
@@ -295,6 +296,12 @@ footer{background:var(--ink);color:#9FA8B0;padding:44px 0;font-size:.84rem}
 .tt-strip::-webkit-scrollbar{height:8px}
 .tt-strip::-webkit-scrollbar-thumb{background:var(--line);border-radius:99px}
 .tt-strip > *{flex:0 0 auto;scroll-snap-align:center;margin:0 !important}
+/* phones: TikTok's player enforces a 325px minimum, so render at 325 and
+   scale each card down (~80%) so the strip isn't so in-your-face */
+@media(max-width:640px){
+  .tt-strip{align-items:flex-start}
+  .tt-strip > *{width:325px !important;min-width:325px !important;max-width:325px !important;transform:scale(.8);transform-origin:top left;margin-right:-65px !important;margin-bottom:-148px !important}
+}
 
 /* ---------- photo lightbox ---------- */
 .gal-grid img{cursor:zoom-in}
