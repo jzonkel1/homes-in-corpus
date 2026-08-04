@@ -8,8 +8,10 @@
 (function () {
   'use strict';
 
-  var LEAD_EMAIL = 'joe@homesincorpus.com';
-  var FORM_ENDPOINT = 'https://formsubmit.co/ajax/' + LEAD_EMAIL;
+  // Netlify Forms — absolute URL so submissions land even when this page is
+  // served from GitHub Pages; no-cors because Netlify's form endpoint doesn't
+  // return CORS headers (the POST still records).
+  var FORM_ENDPOINT = 'https://homesincorpus.netlify.app/';
 
   /* ---------- scroll reveal ---------- */
   var io = new IntersectionObserver(function (es) {
@@ -35,10 +37,10 @@
 
       fetch(FORM_ENDPOINT, {
         method: 'POST',
-        headers: { 'Accept': 'application/json' },
-        body: data
-      }).then(function (r) { return r.json(); })
-        .then(function () { showSuccess(form); })
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(data).toString()
+      }).then(function () { showSuccess(form); })
         .catch(function () {
           // network fail — don't lose the lead, point them to call/text
           form.innerHTML = isES()
