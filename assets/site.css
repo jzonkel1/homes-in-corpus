@@ -281,6 +281,10 @@ footer{background:var(--ink);color:#9FA8B0;padding:44px 0;font-size:.84rem}
 .foot .fcol{max-width:22rem}
 .foot a{color:#C9C0AD}
 .foot a:hover{color:var(--gold)}
+.fprofiles{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin-bottom:12px;font-size:.82rem}
+.fprofiles>span{color:#8C949C;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.7rem}
+.fprofiles a{color:#C9C0AD;font-weight:600}
+.fprofiles a:hover{color:var(--gold)}
 .foot .flinks{display:grid;gap:6px}
 .foot .legal{margin-top:10px;line-height:1.8}
 @media(max-width:640px){.foot{flex-direction:column;text-align:center}.foot .fcol{margin:0 auto}.foot .legal{flex-direction:column!important;align-items:center!important}.foot .legal img{margin:0 auto 8px}}

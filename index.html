@@ -228,6 +228,9 @@
   .mls-spin{width:36px;height:36px;border-radius:50%;border:3px solid var(--line);border-top-color:var(--orange);animation:mlsspin .8s linear infinite}
   @keyframes mlsspin{to{transform:rotate(360deg)}}
   .mls-actions{display:flex;justify-content:center;gap:14px;margin-top:26px;flex-wrap:wrap}
+  .mls-elsewhere{text-align:center;margin-top:16px;font-size:.92rem;color:var(--ink-2)}
+  .mls-elsewhere a{color:var(--orange);font-weight:700}
+  .mls-elsewhere a:hover{text-decoration:underline}
   @media(max-width:700px){
     /* Phones: force the Matrix portal to render its DESKTOP two-pane layout (map + cards)
        at a fixed logical width, then scale it down to fit. JS (sizeMls) sets the exact
@@ -263,6 +266,22 @@
   .z-badge .zl{font-size:.78rem;color:var(--ink-2);font-weight:600;display:flex;align-items:center;gap:6px}
   .z-badge .zlogo{width:52px;height:13px}
   .zlogo{display:inline-block;fill:#006AFF}
+  /* featured testimonial (photo the client attached to their review) */
+  .rev-featured{display:grid;grid-template-columns:.92fr 1.08fr;background:var(--paper);border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-bottom:26px;box-shadow:0 16px 40px rgba(27,39,51,.10)}
+  .rf-photo{position:relative;min-height:340px}
+  .rf-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .rf-body{padding:38px 40px}
+  .rf-tag{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--orange)}
+  .rf-body .q{font-family:'Fraunces',serif;font-size:2.6rem;color:var(--gold);line-height:.4;margin:26px 0 16px}
+  .rf-body p{color:var(--ink-2);font-size:.98rem;margin-bottom:13px}
+  .rf-who{font-weight:700;font-size:.95rem;margin-top:4px}
+  .rf-who span{display:block;font-weight:500;font-size:.79rem;color:var(--ink-2)}
+  @media(max-width:860px){
+    .rev-featured{grid-template-columns:1fr}
+    .rf-photo{min-height:212px}
+    .rf-body{padding:26px 24px}
+    .rf-body .q{margin:18px 0 12px}
+  }
   .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
   .rev{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:30px 28px;display:flex;flex-direction:column;gap:16px}
   .rev .q{font-family:'Fraunces',serif;font-size:2.6rem;color:var(--gold);line-height:.4;margin-top:10px}
@@ -380,6 +399,10 @@
   .foot a{color:#C9C0AD}
   .foot a:hover{color:var(--gold)}
   .foot .legal{margin-top:10px;line-height:1.8}
+  .fprofiles{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin-bottom:12px;font-size:.82rem}
+  .fprofiles>span{color:#8C949C;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.7rem}
+  .fprofiles a{color:#C9C0AD;font-weight:600}
+  .fprofiles a:hover{color:var(--gold)}
   .foot .flinks{display:grid;gap:6px;margin-bottom:12px}
   @media(max-width:640px){.foot{flex-direction:column;text-align:center}.foot .fcol{margin:0 auto}.foot .legal{flex-direction:column!important;align-items:center!important}.foot .legal img{margin:0 auto 8px}}
 
@@ -451,16 +474,43 @@
   "image": "https://homesincorpus.com/assets/joe-headshot-crop.jpg",
   "telephone": "+1-361-960-1779",
   "email": "joe@homesincorpus.com",
-  "address": {"@type": "PostalAddress", "addressLocality": "Corpus Christi", "addressRegion": "TX", "addressCountry": "US"},
-  "areaServed": ["Corpus Christi, TX", "Portland, TX", "Calallen, TX", "Flour Bluff, TX", "Rockport, TX", "Ingleside, TX", "Robstown, TX", "Aransas Pass, TX", "North Padre Island, TX"],
-  "knowsLanguage": ["English", "Spanish"],
-  "identifier": {"@type": "PropertyValue", "propertyID": "TREC License", "value": "0586828"},
-  "worksFor": {"@type": "Organization", "name": "ValTex Realty"},
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Corpus Christi",
+    "addressRegion": "TX",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    "Corpus Christi, TX",
+    "Portland, TX",
+    "Calallen, TX",
+    "Flour Bluff, TX",
+    "Rockport, TX",
+    "Ingleside, TX",
+    "Robstown, TX",
+    "Aransas Pass, TX",
+    "North Padre Island, TX"
+  ],
+  "knowsLanguage": [
+    "English",
+    "Spanish"
+  ],
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "TREC License",
+    "value": "0586828"
+  },
+  "worksFor": {
+    "@type": "Organization",
+    "name": "ValTex Realty"
+  },
   "sameAs": [
     "https://www.facebook.com/JOECORPUSCHRISTIREALTOR/",
     "https://www.instagram.com/joemonceballez/",
     "https://www.tiktok.com/@joemonceballez",
-    "https://www.zillow.com/profile/monceballezjoe"
+    "https://www.zillow.com/profile/monceballezjoe",
+    "https://www.realtor.com/realestateagents/5cdb2adae9a9330012a9c0d1",
+    "https://www.homes.com/real-estate-agents/joe-monceballez/pslh1zs/"
   ]
 }
 </script>
@@ -700,6 +750,7 @@
     <div class="mls-actions">
       <a class="btn btn-ink" href="https://joemonceballez.cbmls.mlsmatrix.com/Matrix/Public/?L=1&amp;ap=PP-8" target="_blank" rel="noopener" data-i18n="mlsBtn1">Open the Full Listings Page</a>
     </div>
+    <p class="mls-elsewhere" data-i18n="mlsElse">Also browse Joe's listings on <a href="https://www.realtor.com/realestateagents/5cdb2adae9a9330012a9c0d1" target="_blank" rel="noopener">Realtor.com</a> and <a href="https://www.homes.com/real-estate-agents/joe-monceballez/pslh1zs/" target="_blank" rel="noopener">Homes.com</a>.</p>
   </div>
 </section>
 
@@ -708,7 +759,7 @@
     <div class="rev-head rv">
       <div>
         <span class="eyebrow"><span class="dash">—</span> <span data-i18n="revEyebrow">Client Reviews</span></span>
-        <h2 data-i18n="revH2">The kind of agent who calls <br class="brk">a plumber at 10:30 PM</h2>
+        <h2 data-i18n="revH2">The kind of agent clients still <br class="brk">call five years later</h2>
       </div>
       <div class="rev-badges">
         <a class="z-badge" href="https://www.zillow.com/profile/monceballezjoe" target="_blank" rel="noopener" title="See Joe's reviews on Zillow">
@@ -717,16 +768,29 @@
         </a>
         <a class="z-badge" href="https://www.google.com/maps/place/Joe+Monceballez+-+Corpus+Christi+Realtor/@27.329776,-97.3581427,9z/data=!3m1!4b1!4m6!3m5!1s0x8668f5826998bba7:0xeb568253df2bb38!8m2!3d27.329776!4d-97.3581427!16s%2Fg%2F11j6yjxjnk" target="_blank" rel="noopener" title="See Joe's reviews on Google">
           <span class="zn">5.0</span>
-          <div><div class="z-stars">★★★★★</div><span class="zl"><span data-i18n="revGBadge">4 reviews on</span> <svg style="width:16px;height:16px" viewBox="0 0 24 24" aria-label="Google"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.1c-.22-.66-.35-1.36-.35-2.1s.13-1.44.35-2.1V7.06H2.18A10.97 10.97 0 0 0 1 12c0 1.77.43 3.45 1.18 4.94l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg> <b style="color:var(--ink)">Google</b></span></div>
+          <div><div class="z-stars">★★★★★</div><span class="zl"><span data-i18n="revGBadge">7 reviews on</span> <svg style="width:16px;height:16px" viewBox="0 0 24 24" aria-label="Google"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.1c-.22-.66-.35-1.36-.35-2.1s.13-1.44.35-2.1V7.06H2.18A10.97 10.97 0 0 0 1 12c0 1.77.43 3.45 1.18 4.94l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg> <b style="color:var(--ink)">Google</b></span></div>
         </a>
       </div>
     </div>
-    <div class="rev-grid capped">
-      <div class="rev rv">
-        <div class="q">“</div>
-        <p>Joe is super professional and was the exact realtor my wife and I needed to sell our first home. Joe called a plumber 10:30 PM the night before final inspection to fix an issue.</p>
-        <div class="who">Bryan G. <span data-i18n="rev1who">Sold a home in Central City · Zillow review</span></div>
+    <div class="rev-featured rv">
+      <div class="rf-photo">
+        <picture>
+          <source srcset="assets/review-bryan-gamez.webp" type="image/webp">
+          <img src="assets/review-bryan-gamez.jpg" alt="The first flip Bryan Gamez sold with Joe Monceballez in Corpus Christi" loading="lazy">
+        </picture>
       </div>
+      <div class="rf-body">
+        <span class="rf-tag">
+          <svg style="width:15px;height:15px" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.1c-.22-.66-.35-1.36-.35-2.1s.13-1.44.35-2.1V7.06H2.18A10.97 10.97 0 0 0 1 12c0 1.77.43 3.45 1.18 4.94l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
+          <span data-i18n="rfTag">Featured Google Review</span>
+        </span>
+        <div class="q">“</div>
+        <p data-i18n="rfP1">Joe Monceballez was an outstanding Realtor to work with. He helped us sell the very first house we ever flipped, and as first-time investors, he walked us through every step of the process. His knowledge of the local real estate market and the entire selling process gave us the confidence we needed to make informed decisions.</p>
+        <p data-i18n="rfP2">What started as a business relationship has turned into a lasting friendship. Joe genuinely cares about his clients' success and is always willing to share his expertise. If you're looking for a Realtor who is knowledgeable, honest, and invested in helping you achieve your real estate goals, I highly recommend Joe Monceballez.</p>
+        <div class="rf-who">Bryan Gamez <span data-i18n="rfWho">Sold his first flip · Local Guide · Google review</span></div>
+      </div>
+    </div>
+    <div class="rev-grid capped">
       <div class="rev rv">
         <div class="q">“</div>
         <p>This man is a Super Hero. He showed us several properties, answered all of our questions, and listened to what our needs were. We found an awesome house.</p>
@@ -767,9 +831,19 @@
         <p>Honest, ethical and trustworthy! He supported us through our home purchase and was patient with us while we walked through multiple properties. Today I am proud to call him my friend.</p>
         <div class="who">Ruben B. <span data-i18n="rev9who">Bought a home · Google review</span></div>
       </div>
-    </div>
+      <div class="rev rv">
+        <div class="q">“</div>
+        <p>Very knowledgeable, professional, responsive, and truly had our best interests in mind throughout the entire process. He made what could have been a stressful experience feel smooth and straightforward. We never felt pressured.</p>
+        <div class="who">Anthony D. <span data-i18n="rev10who">Google review</span></div>
+      </div>
+      <div class="rev rv">
+        <div class="q">“</div>
+        <p>Mr. Monceballez was kind, professional, and easy to work with. I felt taken care of, and the result was exactly what I needed. Great communication and great results. Joe helped us find our dream house.</p>
+        <div class="who">Maria R. <span data-i18n="rev11who">Bought a home · Local Guide · Google review</span></div>
+      </div>
+</div>
     <div class="rev-more">
-      <button class="btn btn-ink" id="revMore" type="button" data-i18n="revMore">Read All 9 Reviews</button>
+      <button class="btn btn-ink" id="revMore" type="button" data-i18n="revMore">Read All 11 Reviews</button>
     </div>
     <div class="mls-actions" style="margin-top:34px">
       <a class="btn btn-ink" href="https://www.zillow.com/profile/monceballezjoe" target="_blank" rel="noopener" data-i18n="revAll">Read Joe's Reviews on Zillow</a>
@@ -973,6 +1047,13 @@
         <a href="home-valuation.html">Free Home Valuation</a>
         <a href="buy-a-home.html">Buy a Home</a>
         <a href="first-time-buyers.html">First-Time Buyers</a>
+      </div>
+      <div class="fprofiles">
+        <span data-i18n="fProfiles">Find Joe on</span>
+        <a href="https://www.zillow.com/profile/monceballezjoe" target="_blank" rel="noopener">Zillow</a>
+        <a href="https://www.realtor.com/realestateagents/5cdb2adae9a9330012a9c0d1" target="_blank" rel="noopener">Realtor.com</a>
+        <a href="https://www.homes.com/real-estate-agents/joe-monceballez/pslh1zs/" target="_blank" rel="noopener">Homes.com</a>
+        <a href="https://www.google.com/maps/place/Joe+Monceballez+-+Corpus+Christi+Realtor/@27.329776,-97.3581427,9z/data=!3m1!4b1!4m6!3m5!1s0x8668f5826998bba7:0xeb568253df2bb38!8m2!3d27.329776!4d-97.3581427!16s%2Fg%2F11j6yjxjnk" target="_blank" rel="noopener">Google</a>
       </div>
       <p class="legal"><a href="https://www.trec.texas.gov/forms/consumer-protection-notice" target="_blank" rel="noopener">TREC Consumer Protection Notice</a><br><a href="https://www.trec.texas.gov/" target="_blank" rel="noopener">Texas Real Estate Commission Information About Brokerage Services</a><br><a href="privacy-policy.html">Privacy Policy</a> · <a href="terms-of-service.html">Terms of Service</a><br>© 2026 Joe Monceballez · All rights reserved<br><a href="https://zonkelmedia.com" target="_blank" rel="noopener">Web Design by Zonkel Media</a></p>
     </div>
@@ -1213,7 +1294,7 @@
     buyP:'Si eres comprador, no pagas ni un centavo de la comisión de Joe — la paga el vendedor. Tienes un negociador experto que conoce el mercado por dentro y por fuera, conoce <b>los mejores prestamistas del área</b>, y revisa cada casa con ojo de contratista antes de que hagas tu oferta.',
     buyBtn:'Empieza tu Búsqueda',
     revEyebrow:'Reseñas de Clientes',
-    revH2:'El tipo de agente que llama <br class="brk">al plomero a las 10:30 PM',
+    revH2:'El tipo de agente al que los clientes <br class="brk">siguen llamando cinco años después',
     revBadge:'7 reseñas en', revAll:'Lee las Reseñas de Joe en Zillow',
     faqEyebrow:'Preguntas Frecuentes', faqH2:'Respuestas antes de llamar',
     faqQ1:'¿Cuánto cuesta trabajar con Joe?', faqA1:'Si estás comprando, normalmente el vendedor paga al agente del comprador — así que la ayuda de Joe casi siempre no te cuesta nada. Si estás vendiendo, la comisión se acuerda desde el principio, sin sorpresas.',
@@ -1234,8 +1315,13 @@
     ctRow1:'Llama o manda texto — respuesta más rápida', ctRow2:'Escríbele directamente',
     fH:'Dile a Joe qué necesitas', fSub:'Te responde el mismo día — normalmente mucho más rápido.',
     mlsLoad:'Cargando propiedades en vivo — un segundo…',
-    revGBadge:'4 reseñas en',
+    revGBadge:'7 reseñas en',
     rev7who:'Vendió su casa · Reseña de Google', rev8who:'Compró casa · Reseña de Google', rev9who:'Compró casa · Reseña de Google',
+    rev10who:'Reseña de Google', rev11who:'Compró casa · Guía Local · Reseña de Google',
+    rfTag:'Reseña Destacada de Google',
+    rfP1:'Joe Monceballez fue un Realtor excepcional. Nos ayudó a vender la primera casa que remodelamos para revender y, como inversionistas primerizos, nos guió en cada paso del proceso. Su conocimiento del mercado local y de todo el proceso de venta nos dio la confianza para tomar decisiones informadas.',
+    rfP2:'Lo que empezó como una relación de negocios se convirtió en una amistad duradera. A Joe de verdad le importa el éxito de sus clientes y siempre comparte su experiencia. Si buscas un Realtor con conocimiento, honesto y comprometido con tus metas de bienes raíces, recomiendo mucho a Joe Monceballez.',
+    rfWho:'Vendió su primera remodelación · Guía Local · Reseña de Google',
     qwT1:'¿En qué te puede ayudar Joe?', qwS1:'Toca lo que más se acerque — no hay respuesta incorrecta.',
     qwO1:'Vender mi casa', qwO2:'Oferta en efectivo', qwO3:'Comprar una casa', qwO4:'Invertir / wholesale',
     qwT2:'¿Qué tan pronto quieres moverte?', qwS2:'Sin presión — solo le dice a Joe qué tan rápido actuar.',
@@ -1246,7 +1332,7 @@
     qwT4:'Lo último — ¿tu nombre?', qwS4:'Para que Joe sepa a quién le escribe.',
     qwEName:'Joe solo necesita un nombre para contactarte.',
     qwBack:'Atrás', qwNext:'Continuar',
-    revMore:'Leer las 9 reseñas',
+    revMore:'Leer las 11 reseñas',
     qwDoneH:'¡Listo! Joe se comunicará contigo. 🤙', qwDoneP:'¿Lo necesitas ahora mismo? Contesta llamadas y textos 24/7.', qwDoneBtn:'Llama al (361) 960-1779',
     fL1:'Estoy buscando…', fO0:'Elige una opción', fO1:'Vender mi casa (listarla)', fO2:'Una oferta en efectivo por mi casa', fO3:'Comprar una casa', fO4:'Alertas de nuevas propiedades', fO5:'Hablar de inversiones / wholesale',
     fL2:'Nombre', fL3:'Teléfono', fL4:'Dirección de la propiedad', fL4b:'(si vendes)', fL5:'¿Algo más?',
