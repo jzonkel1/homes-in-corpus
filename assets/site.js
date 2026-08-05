@@ -11,7 +11,7 @@
   // Netlify Forms — absolute URL so submissions land even when this page is
   // served from GitHub Pages; no-cors because Netlify's form endpoint doesn't
   // return CORS headers (the POST still records).
-  var FORM_ENDPOINT = 'https://homesincorpus.netlify.app/';
+  var FORM_ENDPOINT = 'https://homesincorpus.com/';
 
   /* ---------- scroll reveal ---------- */
   var io = new IntersectionObserver(function (es) {
