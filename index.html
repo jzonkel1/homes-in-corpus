@@ -282,13 +282,13 @@
     .rf-body{padding:26px 24px}
     .rf-body .q{margin:18px 0 12px}
   }
-  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .rev{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:30px 28px;display:flex;flex-direction:column;gap:16px}
+  .rev-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:24px}
+  .rev{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:30px 28px;display:flex;flex-direction:column;gap:16px;flex:0 1 calc((100% - 48px)/3)}
   .rev .q{font-family:'Fraunces',serif;font-size:2.6rem;color:var(--gold);line-height:.4;margin-top:10px}
   .rev p{color:var(--ink-2);font-size:.98rem;flex:1}
   .rev .who{font-weight:700;font-size:.9rem}
   .rev .who span{display:block;font-weight:500;font-size:.78rem;color:var(--ink-2)}
-  @media(max-width:860px){.rev-grid{grid-template-columns:1fr}}
+  @media(max-width:860px){.rev{flex-basis:100%}}
 
   /* ---------- about ---------- */
   .about{background:var(--ink);color:#EFE7D8}
@@ -602,7 +602,7 @@
       </div>
     </div>
     <div class="joe-card rv">
-      <img src="assets/joe-portrait.jpg" alt="Joe Monceballez, Corpus Christi Realtor">
+      <img src="assets/joe-headshot-crop.jpg" alt="Joe Monceballez, Corpus Christi Realtor">
       <div class="jc-body">
         <div class="jc-name">Joe Monceballez</div>
         <div class="jc-role" data-i18n="jcRole">Realtor · Investor · Contractor</div>
@@ -768,7 +768,7 @@
         </a>
         <a class="z-badge" href="https://www.google.com/maps/place/Joe+Monceballez+-+Corpus+Christi+Realtor/@27.329776,-97.3581427,9z/data=!3m1!4b1!4m6!3m5!1s0x8668f5826998bba7:0xeb568253df2bb38!8m2!3d27.329776!4d-97.3581427!16s%2Fg%2F11j6yjxjnk" target="_blank" rel="noopener" title="See Joe's reviews on Google">
           <span class="zn">5.0</span>
-          <div><div class="z-stars">★★★★★</div><span class="zl"><span data-i18n="revGBadge">7 reviews on</span> <svg style="width:16px;height:16px" viewBox="0 0 24 24" aria-label="Google"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.1c-.22-.66-.35-1.36-.35-2.1s.13-1.44.35-2.1V7.06H2.18A10.97 10.97 0 0 0 1 12c0 1.77.43 3.45 1.18 4.94l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg> <b style="color:var(--ink)">Google</b></span></div>
+          <div><div class="z-stars">★★★★★</div><span class="zl"><span data-i18n="revGBadge">8 reviews on</span> <svg style="width:16px;height:16px" viewBox="0 0 24 24" aria-label="Google"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.1c-.22-.66-.35-1.36-.35-2.1s.13-1.44.35-2.1V7.06H2.18A10.97 10.97 0 0 0 1 12c0 1.77.43 3.45 1.18 4.94l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg> <b style="color:var(--ink)">Google</b></span></div>
         </a>
       </div>
     </div>
@@ -841,9 +841,14 @@
         <p>Mr. Monceballez was kind, professional, and easy to work with. I felt taken care of, and the result was exactly what I needed. Great communication and great results. Joe helped us find our dream house.</p>
         <div class="who">Maria R. <span data-i18n="rev11who">Bought a home · Local Guide · Google review</span></div>
       </div>
+      <div class="rev rv">
+        <div class="q">“</div>
+        <p>Had a repair done on one of my light fixtures. The job was done in a timely manner and looks great. Would recommend.</p>
+        <div class="who">Killadeuce C. <span data-i18n="rev12who">Light fixture repair · Google review</span></div>
+      </div>
 </div>
     <div class="rev-more">
-      <button class="btn btn-ink" id="revMore" type="button" data-i18n="revMore">Read All 11 Reviews</button>
+      <button class="btn btn-ink" id="revMore" type="button" data-i18n="revMore">Read All 12 Reviews</button>
     </div>
     <div class="mls-actions" style="margin-top:34px">
       <a class="btn btn-ink" href="https://www.zillow.com/profile/monceballezjoe" target="_blank" rel="noopener" data-i18n="revAll">Read Joe's Reviews on Zillow</a>
@@ -1315,9 +1320,10 @@
     ctRow1:'Llama o manda texto — respuesta más rápida', ctRow2:'Escríbele directamente',
     fH:'Dile a Joe qué necesitas', fSub:'Te responde el mismo día — normalmente mucho más rápido.',
     mlsLoad:'Cargando propiedades en vivo — un segundo…',
-    revGBadge:'7 reseñas en',
+    revGBadge:'8 reseñas en',
     rev7who:'Vendió su casa · Reseña de Google', rev8who:'Compró casa · Reseña de Google', rev9who:'Compró casa · Reseña de Google',
     rev10who:'Reseña de Google', rev11who:'Compró casa · Guía Local · Reseña de Google',
+    rev12who:'Reparación de una lámpara · Reseña de Google',
     rfTag:'Reseña Destacada de Google',
     rfP1:'Joe Monceballez fue un Realtor excepcional. Nos ayudó a vender la primera casa que remodelamos para revender y, como inversionistas primerizos, nos guió en cada paso del proceso. Su conocimiento del mercado local y de todo el proceso de venta nos dio la confianza para tomar decisiones informadas.',
     rfP2:'Lo que empezó como una relación de negocios se convirtió en una amistad duradera. A Joe de verdad le importa el éxito de sus clientes y siempre comparte su experiencia. Si buscas un Realtor con conocimiento, honesto y comprometido con tus metas de bienes raíces, recomiendo mucho a Joe Monceballez.',
@@ -1332,7 +1338,7 @@
     qwT4:'Lo último — ¿tu nombre?', qwS4:'Para que Joe sepa a quién le escribe.',
     qwEName:'Joe solo necesita un nombre para contactarte.',
     qwBack:'Atrás', qwNext:'Continuar',
-    revMore:'Leer las 11 reseñas',
+    revMore:'Leer las 12 reseñas',
     qwDoneH:'¡Listo! Joe se comunicará contigo. 🤙', qwDoneP:'¿Lo necesitas ahora mismo? Contesta llamadas y textos 24/7.', qwDoneBtn:'Llama al (361) 960-1779',
     fL1:'Estoy buscando…', fO0:'Elige una opción', fO1:'Vender mi casa (listarla)', fO2:'Una oferta en efectivo por mi casa', fO3:'Comprar una casa', fO4:'Alertas de nuevas propiedades', fO5:'Hablar de inversiones / wholesale',
     fL2:'Nombre', fL3:'Teléfono', fL4:'Dirección de la propiedad', fL4b:'(si vendes)', fL5:'¿Algo más?',
