@@ -204,4 +204,54 @@
     setTimeout(update, 1500); setTimeout(update, 4000);
     update();
   });
+
+  /* ---------- mobile: Matrix opens map-first, so hand people the "Hide the Map" tip
+     before sending them off-site. Once per browsing session. ---------- */
+  (function(){
+    var seen = false;
+    try { seen = sessionStorage.getItem('himc_mls_tip') === '1'; } catch(e){}
+    var T = {
+      en: {h:"Joe's listings open on a map",
+           p:'On a phone, tap <span class="mtip-key">Hide the Map</span> at the bottom of the next screen to see every listing as a list.',
+           go:'Got It — Show Me the Listings', x:'Never mind'},
+      es: {h:'Las propiedades abren en un mapa',
+           p:'En el celular, toca <span class="mtip-key">Hide the Map</span> abajo en la siguiente pantalla para ver todas las propiedades en lista.',
+           go:'Entendido — Ver las Propiedades', x:'Cancelar'}
+    };
+    var ICON = '<svg class="icon" viewBox="0 0 24 24"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/></svg>';
+    var box = null;
+    var close = function() { if (box){ box.classList.remove('on'); document.body.style.overflow = ''; } };
+    var open = href => {
+      var t = T[document.documentElement.lang === 'es' ? 'es' : 'en'];
+      if (!box){
+        box = document.createElement('div');
+        box.className = 'mtip';
+        box.innerHTML = '<div class="mtip-card" role="dialog" aria-modal="true"><div class="mtip-ic">' + ICON +
+          '</div><h3></h3><p></p><a class="btn btn-orange mtip-go" target="_blank" rel="noopener"></a>' +
+          '<button type="button" class="mtip-x"></button></div>';
+        document.body.appendChild(box);
+        box.addEventListener('click', e => { if (e.target === box || e.target.closest('.mtip-x')) close(); });
+        box.querySelector('.mtip-go').addEventListener('click', () => {
+          seen = true;
+          try { sessionStorage.setItem('himc_mls_tip', '1'); } catch(e){}
+          setTimeout(close, 80);
+        });
+        addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+      }
+      box.querySelector('h3').textContent = t.h;
+      box.querySelector('p').innerHTML = t.p;
+      var go = box.querySelector('.mtip-go');
+      go.textContent = t.go; go.href = href;
+      box.querySelector('.mtip-x').textContent = t.x;
+      box.classList.add('on');
+      document.body.style.overflow = 'hidden';
+    };
+    document.addEventListener('click', e => {
+      var a = e.target.closest('a[href*="mlsmatrix.com"]');
+      if (!a || a.closest('.mtip') || seen) return;
+      if (!matchMedia('(max-width:820px)').matches) return;
+      e.preventDefault();
+      open(a.href);
+    });
+  })();
 })();

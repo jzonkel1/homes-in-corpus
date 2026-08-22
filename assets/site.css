@@ -42,6 +42,17 @@ nav{position:sticky;top:0;z-index:50;background:rgba(248,243,234,.92);backdrop-f
 .nav-links a.nav-listings:hover{color:var(--orange-deep)}
 .nav-listings .ext{width:12px;height:12px;stroke-width:2.4;opacity:.75;margin-left:6px;flex:none}
 .mobile-menu>a.nav-listings{display:flex;align-items:center;color:var(--orange);font-weight:700}
+.mtip{position:fixed;inset:0;z-index:120;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(27,39,51,.66);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+.mtip.on{display:flex}
+.mtip-card{background:var(--paper);border:1px solid var(--line);border-radius:20px;max-width:400px;width:100%;padding:26px 24px 20px;box-shadow:0 24px 60px rgba(0,0,0,.4);text-align:center}
+.mtip-ic{width:48px;height:48px;border-radius:15px;background:var(--tan-2);color:var(--orange);display:inline-flex;align-items:center;justify-content:center;margin-bottom:13px}
+.mtip-ic .icon{width:25px;height:25px}
+.mtip-card h3{font-family:'Fraunces',serif;font-weight:700;font-size:1.3rem;line-height:1.25;margin-bottom:9px}
+.mtip-card p{font-size:.95rem;line-height:1.55;color:var(--ink-2);margin-bottom:18px}
+.mtip-key{display:inline-block;background:var(--ink);color:#F3EBDC;border-radius:7px;padding:1px 9px;font-weight:700;font-size:.88rem;white-space:nowrap}
+.mtip-go{width:100%;justify-content:center;text-align:center}
+.mtip-x{display:block;width:100%;margin-top:6px;background:none;border:0;color:var(--ink-2);font-family:'Karla',sans-serif;font-weight:600;font-size:.86rem;padding:10px;cursor:pointer}
+.mtip-x:hover{color:var(--ink)}
 .nav-right{display:flex;align-items:center;gap:10px}
 .btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;border-radius:10px;padding:13px 22px;transition:.18s;cursor:pointer;border:none;font-size:.95rem;font-family:'Karla',sans-serif}
 .btn-orange{background:var(--orange);color:#fff;box-shadow:0 6px 18px rgba(199,80,31,.28)}
