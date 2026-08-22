@@ -9,7 +9,7 @@
   --gold:#D9A441; --line:#DACFB9; --max:1160px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:82px}
 [id]{scroll-margin-top:84px}
 .vh{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 body{font-family:'Karla',sans-serif;color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}
@@ -38,6 +38,10 @@ nav{position:sticky;top:0;z-index:50;background:rgba(248,243,234,.92);backdrop-f
 .nav-links{display:flex;gap:24px;font-weight:600;font-size:.92rem}
 .nav-links a{opacity:.85}
 .nav-links a:hover{color:var(--orange);opacity:1}
+.nav-links a.nav-listings{display:inline-flex;align-items:center;color:var(--orange);opacity:1;font-weight:700}
+.nav-links a.nav-listings:hover{color:var(--orange-deep)}
+.nav-listings .ext{width:12px;height:12px;stroke-width:2.4;opacity:.75;margin-left:6px;flex:none}
+.mobile-menu>a.nav-listings{display:flex;align-items:center;color:var(--orange);font-weight:700}
 .nav-right{display:flex;align-items:center;gap:10px}
 .btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;border-radius:10px;padding:13px 22px;transition:.18s;cursor:pointer;border:none;font-size:.95rem;font-family:'Karla',sans-serif}
 .btn-orange{background:var(--orange);color:#fff;box-shadow:0 6px 18px rgba(199,80,31,.28)}

@@ -66,7 +66,7 @@
     tb2: 'English available',
     brand2: 'Realtor · Inversionista · Contratista',
     nav0: 'Servicios <svg class="icon caret" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>',
-    navHome: 'Inicio', navGallery: 'Galería', navAbout: 'Nosotros', navContact: 'Contacto',
+    navHome: 'Inicio', navListings: 'Ver Propiedades', navGallery: 'Galería', navAbout: 'Nosotros', navContact: 'Contacto',
     nav2: 'Oferta en Efectivo', nav3: 'Propiedades', nav4: 'Reseñas', nav5: 'Sobre Joe',
     smH1: 'Vende Tu Casa', smH2: 'Comprar', smH3: 'Invertir y Renovar',
     sm1: 'Vende Tu Casa', sm1s: 'Listado completo, al mejor precio',
@@ -132,6 +132,8 @@
     drawer.className = 'mobile-menu'; drawer.innerHTML = navLinksEl.innerHTML;
     var drawerHome = drawer.querySelector('a[data-i18n="navHome"]');
     if (drawerHome) drawerHome.parentNode.removeChild(drawerHome); // tapping the logo covers "Home"
+    var drawerListings = drawer.querySelector('a.nav-listings');
+    if (drawerListings) drawer.insertBefore(drawerListings, drawer.firstChild); // listings first — don't bury it under the Services submenu
     document.body.appendChild(drawer);
     var setMenu = function (open) {
       document.body.classList.toggle('menu-open', open);
