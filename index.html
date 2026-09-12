@@ -3,6 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZCC9LEDBKK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZCC9LEDBKK');
+  /* safe wrapper - never let a blocked tag break the page */
+  window.zTrack = function(n, p){ try { gtag('event', n, p || {}); } catch(e){} };
+  /* click-to-call is the primary CTA on this site, so measure it */
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest && e.target.closest('a[href^="tel:"]');
+    if (a) window.zTrack('call_click', { link_url: a.getAttribute('href') });
+  }, true);
+</script>
+
 <title>Joe Monceballez &mdash; Corpus Christi Realtor, Investor &amp; Contractor</title>
 <meta name="description" content="Buy, sell, or get a cash offer on your Corpus Christi home. Joe Monceballez — Realtor, investor & contractor. Hundreds of happy customers. (361) 960-1779.">
 <link rel="canonical" href="https://homesincorpus.com/">
@@ -1273,6 +1289,7 @@
       };
       const honey = form.querySelector('input[name="_honey"]');
       if (honey && honey.value){ done(); return; }
+      window.zTrack && window.zTrack('lead_submit', { form_name:'lead', page: location.pathname });
       fetch(LEAD_ENDPOINT, { method:'POST', mode:'no-cors', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:new URLSearchParams(new FormData(form)).toString() })
         .then(done).catch(done);
     });

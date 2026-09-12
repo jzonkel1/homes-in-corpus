@@ -35,6 +35,7 @@
 
       if (honey && honey.value) { showSuccess(form); return; }
 
+      window.zTrack && window.zTrack('lead_submit', { form_name:'lead', page: location.pathname });
       fetch(FORM_ENDPOINT, {
         method: 'POST',
         mode: 'no-cors',

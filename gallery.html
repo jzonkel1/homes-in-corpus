@@ -7,6 +7,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZCC9LEDBKK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZCC9LEDBKK');
+  /* safe wrapper - never let a blocked tag break the page */
+  window.zTrack = function(n, p){ try { gtag('event', n, p || {}); } catch(e){} };
+  /* click-to-call is the primary CTA on this site, so measure it */
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest && e.target.closest('a[href^="tel:"]');
+    if (a) window.zTrack('call_click', { link_url: a.getAttribute('href') });
+  }, true);
+</script>
+
 <title>Gallery &mdash; Corpus Christi Homes &amp; Renovations by Joe Monceballez</title>
 <meta name="description" content="See homes Joe Monceballez has listed, sold, and renovated across Corpus Christi & the Coastal Bend. Realtor, investor & contractor. (361) 960-1779.">
 <link rel="canonical" href="https://homesincorpus.com/gallery.html">
@@ -29,7 +45,7 @@
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
 <meta name="theme-color" content="#1B2733">
-<link rel="stylesheet" href="assets/site.css?v=20260822b">
+<link rel="stylesheet" href="assets/site.css?v=20260912">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -357,6 +373,6 @@
   window.PAGE_ES_PH = {};
 </script>
 <script async src="https://www.tiktok.com/embed.js"></script>
-<script src="assets/site.js?v=20260822b"></script>
+<script src="assets/site.js?v=20260912"></script>
 </body>
 </html>
